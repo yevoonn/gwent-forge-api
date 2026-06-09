@@ -1,13 +1,21 @@
 import { findCards } from "./service.js";
+import { parseQueryArray } from "./helper.js";
 
 export async function getCards(req, res) {
   try {
-    const deck = req.query.deck?.toUpperCase();
     const lang = req.query.lang ?? "en";
     const sort = req.query.sort ?? "name_asc";
+    const filters = {
+      deck: req.query.deck?.toUpperCase(),
+      type: req.query.type?.toUpperCase(),
+      range: req.query.range?.toUpperCase(),
+      abilities: parseQueryArray(req.query.ability),
+      search: req.query.search,
+      lang: lang,
+    };
 
     const cards = await findCards({
-      deck,
+      filters,
       lang,
       sort,
     });

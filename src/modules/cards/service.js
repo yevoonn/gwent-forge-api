@@ -1,21 +1,14 @@
 import { prisma } from "../../lib/prisma.js";
-import { getOrderBy, sortCards } from "./helper.js";
+import { getOrderBy, sortCards, buildWhere } from "./helper.js";
 import { mapCards } from "./mapper.js";
 
-export async function findCards({ deck, lang, sort }) {
+export async function findCards({ filters, lang, sort }) {
+  const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
   const cards = await prisma.card.findMany({
-    where: {
-      is_deck_card: true,
-
-      deck: {
-        code: deck,
-      },
-    },
-
+    where,
     orderBy,
-
     select: {
       code: true,
       power: true,

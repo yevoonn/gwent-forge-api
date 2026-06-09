@@ -1,25 +1,23 @@
-import { prisma } from "../../lib/prisma.js";
+import { findCards } from "./service.js";
 
 export async function getCards(req, res) {
-  const cards = await prisma.card.findMany();
+  try {
+    const deck = req.query.deck?.toUpperCase();
+    const lang = req.query.lang ?? "en";
+    const sort = req.query.sort ?? "name_asc";
 
-  res.json(cards);
-}
+    const cards = await findCards({
+      deck,
+      lang,
+      sort,
+    });
 
-export async function getCardsByDeck(req, res) {
-  const deckId = Number(req.params.deckId);
+    res.json(cards);
+  } catch (error) {
+    console.error(error);
 
-  const cards = await prisma.card.findMany({
-    where: {
-      deck_id: deckId,
-      is_deck_card: true,
-    },
-    include: {
-      card_translation: true,
-      card_type: true,
-      card_range: true,
-    },
-  });
-
-  res.json(cards);
+    res.status(500).json({
+      error: "Internal server error",
+    });
+  }
 }

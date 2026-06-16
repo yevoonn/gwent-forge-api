@@ -12,6 +12,7 @@ export async function getCards(req, res) {
       abilities: parseQueryArray(req.query.ability),
       search: req.query.search,
       lang: lang,
+      is_deck_card: req.query.is_deck_card === "false" ? false : true,
     };
 
     const cards = await findCards({

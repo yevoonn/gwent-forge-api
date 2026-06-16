@@ -35,10 +35,10 @@ export function sortCards(cards, sort, lang) {
 }
 
 export function buildWhere(filters) {
-  const { deck, type, range, abilities, search, lang } = filters;
+  const { deck, type, range, abilities, search, lang, is_deck_card } = filters;
 
   const where = {
-    is_deck_card: true,
+    is_deck_card: is_deck_card,
   };
 
   if (deck) {

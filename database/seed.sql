@@ -28423,3 +28423,6100 @@ FROM
   language l
 WHERE
   l.code IN ('pl', 'en', 'it');
+
+-- ==========================================
+-- CARD ABILITY RELATIONSHIP
+-- ==========================================
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON006'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON007'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON009'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON011'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON014'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON015'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON016'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON017'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON018'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON023'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'AVENGER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON024'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON025'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON026'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON027'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON037'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON038_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON038_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON038_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON039'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON040'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON041'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON046'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON047'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON048'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON049'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON052'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON053'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON054'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON055'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON056'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON057'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON059'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON063_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON063_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON063_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON064_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON064_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON064_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON065_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON065_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON065_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON066_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON066_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON066_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON067_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON067_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON067_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON068_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON068_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON068_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON069_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON069_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON069_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON070_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON070_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'MON070_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL006'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL010'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL014'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL021'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SUMMON'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL023'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL025'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL026'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL028'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL029_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL029_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL029_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL031'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL032'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL033'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL034'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL036'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL037'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL038'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL039'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL045'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL047'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL048'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL051'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL053'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL055'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL056'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL059_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL059_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL059_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL060_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL060_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL060_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL061_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL061_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL061_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL062_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL062_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL062_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL063_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL063_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL063_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL064_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL064_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL064_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL065_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL065_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL065_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL066_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL066_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NIL066_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR006'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR007'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR009'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR014'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR017'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR018'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR019'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR021'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR022'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR023'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'AVENGER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR024'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR025'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR026'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR027'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR029'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR031'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR032_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR032_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR032_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR033'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR034'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR035'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR037'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR038'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR039'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR040'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR041'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR049'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR051'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR056'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR059_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR059_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR059_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR060_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR060_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR060_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR061_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR061_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR061_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR062_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR062_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR062_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR063_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR063_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR063_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR064_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR064_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR064_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR065_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR065_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR065_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR066_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR066_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'NOR066_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO006'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO007'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO009'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO011'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO014'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO018'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SUMMON'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO019'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO025'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO026'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO027'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO028'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO029'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO030'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO033'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO034_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO034_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO034_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO035'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO036'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO037'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO038'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO039'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO040'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO047'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO048'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO051'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO054'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO060_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO060_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO060_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO061_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO061_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO061_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO062_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO062_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO062_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO063_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO063_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO063_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO064_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO064_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO064_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO065_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO065_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO065_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO066_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO066_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO066_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO067_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO067_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SCO067_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE006'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SPY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE007'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE008'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE009'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MARDROEME'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE010'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE014'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE015'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BERSERKER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE016'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MEDIC'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE019_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE019_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE019_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE021'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE022'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE023'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE024'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE027'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'AVENGER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE028'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE030'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE032'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE033_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE033_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE033_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE035'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SUMMON'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE036_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE036_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE036_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MUSTER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE038'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE039'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE042'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MORALE'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE043_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE043_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE043_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE046'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH_ROW'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE047_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE047_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE047_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BOND'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE048_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BERSERKER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE048_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BERSERKER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE048_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'BERSERKER'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE050_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE050_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE050_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FROST'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE051_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE051_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE051_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'CLEAR'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE052_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE052_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE052_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'HORN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE053_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE053_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE053_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'DECOY'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE054_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE054_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE054_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'FOG'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE055_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MARDROEME'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE055_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MARDROEME'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE055_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'MARDROEME'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE056_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE056_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE056_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'SCORCH'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE057_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE057_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE057_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'STORM'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE058_1_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE058_2_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );
+
+INSERT INTO
+  card_ability_relationship (card_id, card_ability_id)
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        card
+      WHERE
+        code = 'SKE058_3_3'
+    ),
+    (
+      SELECT
+        id
+      FROM
+        card_ability
+      WHERE
+        code = 'RAIN'
+    )
+  );

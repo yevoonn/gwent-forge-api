@@ -48,6 +48,8 @@ export async function findCards({ filters, lang, sort }) {
 
       card_range: {
         select: {
+          code: true,
+
           card_range_translation: {
             where: {
               language: {

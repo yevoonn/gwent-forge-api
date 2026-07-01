@@ -3024,11 +3024,7 @@ SELECT
     WHERE
       code = 'MON029'
   ),
-  CASE
-    WHEN l.code = 'en' THEN 'Emiel Regis Rohellec Terzieff'
-    WHEN l.code = 'it' THEN 'Emiel Regis'
-    ELSE '@@Emiel Regis Rohellec Terzieff@@'
-  END,
+  'Emiel Regis Rohellec Terzieff',
   ''
 FROM
   language l
@@ -8281,11 +8277,7 @@ SELECT
     WHERE
       code = 'NIL024'
   ),
-  CASE
-    WHEN l.code = 'en' THEN 'Emiel Regis Rohellec'
-    WHEN l.code = 'it' THEN 'Emiel Regis'
-    ELSE '@@Emiel Regis Rohellec@@'
-  END,
+  'Emiel Regis Rohellec Terzieff',
   ''
 FROM
   language l
@@ -13993,11 +13985,7 @@ SELECT
     WHERE
       code = 'NOR030'
   ),
-  CASE
-    WHEN l.code = 'en' THEN 'Emiel Regis Rohellec'
-    WHEN l.code = 'it' THEN 'Emiel Regis'
-    ELSE '@@Emiel Regis Rohellec@@'
-  END,
+  'Emiel Regis Rohellec Terzieff',
   ''
 FROM
   language l
@@ -19380,11 +19368,7 @@ SELECT
     WHERE
       code = 'SCO031'
   ),
-  CASE
-    WHEN l.code = 'en' THEN 'Emiel Regis Rohellec Terzieff'
-    WHEN l.code = 'it' THEN 'Emiel Regis Rohellec'
-    ELSE '@@Emiel Regis Rohellec Terzieff@@'
-  END,
+  'Emiel Regis Rohellec Terzieff',
   ''
 FROM
   language l
@@ -25027,11 +25011,7 @@ SELECT
     WHERE
       code = 'SKE031'
   ),
-  CASE
-    WHEN l.code = 'en' THEN 'Emiel Regis Rohellec'
-    WHEN l.code = 'it' THEN 'Emiel Regis'
-    ELSE '@@Emiel Regis Rohellec@@'
-  END,
+  'Emiel Regis Rohellec Terzieff',
   ''
 FROM
   language l

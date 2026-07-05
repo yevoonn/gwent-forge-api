@@ -663,3 +663,258 @@ WHERE
     WHERE
       code = 'SKELLIGE'
   );
+
+-- ==========================================
+-- CARD TYPE TRANSLATION
+-- ==========================================
+UPDATE card_type_translation
+SET
+  "name" = 'Bohater'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'HERO'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Hero'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'HERO'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Eroe'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'HERO'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Dowódca'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'LEADER'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Leader'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'LEADER'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Comandante'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'LEADER'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Specjalna'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'SPECIAL'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Special'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'SPECIAL'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Speciali'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'SPECIAL'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Jednostka'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'UNIT'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Unit'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'UNIT'
+  );
+
+UPDATE card_type_translation
+SET
+  "name" = 'Unità'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_type_id = (
+    SELECT
+      id
+    FROM
+      card_type
+    WHERE
+      code = 'UNIT'
+  );

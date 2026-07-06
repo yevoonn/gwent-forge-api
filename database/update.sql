@@ -918,3 +918,261 @@ WHERE
     WHERE
       code = 'UNIT'
   );
+
+-- ==========================================
+-- CARD RANGE TRANSLATION
+-- ==========================================
+UPDATE card_range_translation
+SET
+  "name" = 'Zręczność',
+  description = 'Zagraj kartę z tą zdolnością do rzędu bliskiego starcia albo do rzędu dalekiego zasięgu. Po zagraniu tej karty nie można jej przesunąć do innego rzędu.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'AGILE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Agile',
+  description = 'Place on either the Close Combat or Ranged Combat row. Cannot be moved once placed.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'AGILE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Agilità',
+  description = 'Schierabile sia nella fila del combattimento ravvicinato che a distanza. Una volta schierata, la carta non può essere spostata.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'AGILE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Bliskie starcie'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'CLOSE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Close Combat'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'CLOSE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Combattimento ravvicinato'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'CLOSE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Daleki zasięg'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'RANGED'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Ranged Combat'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'RANGED'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Combattimento a Distanza'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'RANGED'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Oblężenie'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'SIEGE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Siege Combat'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'SIEGE'
+  );
+
+UPDATE card_range_translation
+SET
+  "name" = 'Assedio'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_range_id = (
+    SELECT
+      id
+    FROM
+      card_range
+    WHERE
+      code = 'SIEGE'
+  );

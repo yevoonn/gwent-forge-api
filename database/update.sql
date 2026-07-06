@@ -1176,3 +1176,26 @@ WHERE
     WHERE
       code = 'SIEGE'
   );
+
+-- ==========================================
+-- CARD ABILITY RELATIONSHIP
+-- ==========================================
+UPDATE card_ability_relationship
+SET
+  card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SUMMON'
+  )
+WHERE
+  card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'AVENGER'
+  );

@@ -1199,3 +1199,1128 @@ WHERE
     WHERE
       code = 'AVENGER'
   );
+
+-- ==========================================
+-- CARD ABILITY TRANSLATION
+-- ==========================================
+UPDATE card_ability_translation
+SET
+  "name" = 'Berserker',
+  description = 'Zagraj odpowiednią kartę z talii pobocznej i usuń kartę z tą zdolnością z rozgrywki (nie odkładaj jej na stos kart odrzuconych).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'BERSERKER'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Berserker',
+  description = 'The specified card is played from the side deck, while the "Berserker" is removed from the game entirely (not sent to the discard pile).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'BERSERKER'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Berserker',
+  description = 'La carta specificata viene giocata dal mazzo supplementare e il "Berserker” viene completamente rimosso dal gioco (non viene mandato nella pila degli scarti).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'BERSERKER'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Więź',
+  description = 'Pomnóż siłę karty z tą zdolnością przez liczbę sojuszniczych kart jednostek o tej samej nazwie.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'BOND'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Tight bond',
+  description = 'Multiply the Strength of this Unit by the number of allies with the same name.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'BOND'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Vincolo',
+  description = 'Moltiplica la Forza di questa Unità per il numero di alleati con lo stesso nome. '
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'BOND'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Czyste niebo',
+  description = 'Odrzuć tę kartę po zagraniu. Odrzuć wszystkie karty pogody znajdujące się aktualnie w grze. Ich efekty zostają anulowane.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'CLEAR'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Clear weather',
+  description = 'Discard after playing. Discard all Weather cards currently on the battlefield. Their effects are cancelled.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'CLEAR'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Clima Sereno',
+  description = 'Scartala dopo averla giocata. Scarta tutte le carte Clima che si trovano sul campo di battaglia al momento. I loro effetti vengono annullati.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'CLEAR'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Manekin do ćwiczeń',
+  description = 'Zastąp tą kartą 1 ze swoich kart jednostek na polu bitwy (nie może to być karta bohatera). Weź tę kartę jednostki z powrotem na rękę. Siła Manekina do ćwiczeń wynosi 0.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'DECOY'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Decoy',
+  description = 'Replace one Unit Card, excluding Heroes, on the controlling player''s side of the battlefield. The replaced Unit Card returns to the player''s hand, though the Decoy has a Strength value of 0.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'DECOY'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Esca',
+  description = 'Sostituisce una carta Unità, a eccezione degli Eroi, sul lato del campo di battaglia del proprietario. La carta Unità sostituita torna nella mano del giocatore, ma l''Esca avrà un punteggio di Forza pari a 0.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'DECOY'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Gęsta mgła',
+  description = 'Zagraj tę kartę odkrytą na pole kart pogody. Siła wszystkich jednostek dalekiego zasięgu obojga graczy wynosi 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'FOG'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Impenetrable fog',
+  description = 'Place face up in the Weather cards area. Sets the Strength of all range combat Units to 1 for both players.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'FOG'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Nebbia Impenetrabile',
+  description = 'Posizionala rivolta verso l''alto nell''area delle carte Clima. Imposta il punteggio di Forza di tutte le Unità da combattimento a distanza per entrambi i giocatori a 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'FOG'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Trzaskający mróz',
+  description = 'Zagraj tę kartę odkrytą na pole kart pogody. Siła wszystkich jednostek bliskiego starcia obojga graczy wynosi 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'FROST'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Biting frost',
+  description = 'Place face up in the Weather cards area. Sets the Strength of all close combat Units to 1 for both players.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'FROST'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Morsa del Gelo',
+  description = 'Posizionala rivolta verso l''alto nell''area delle carte Clima. Imposta il punteggio di Forza di tutte le Unità da combattimento ravvicinato per entrambi i giocatori a 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'FROST'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Róg dowódcy',
+  description = 'Karta z tą zdolnością podwaja siłę wszystkich kart jednostek w rzędzie, w którym się znajduje, chyba że w tym rzędzie znajduje się już karta "Róg dowódcy".'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'HORN'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Commander''s horn',
+  description = 'Double the Strength of all other Unit Cards on this card''s row, unless there is already a "Commander''s horn" card affecting this row.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'HORN'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Corno del Comandante',
+  description = 'Raddoppia la Forza di tutte le altre carte Unità nella fila della carta, a meno che non ci sia già una carta "Corno del Comandante" che influenza questa fila.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'HORN'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Mardroeme',
+  description = 'Karta z tą zdolnością powoduje przemianę wszystkich kart ze zdolnością berserkera w rzędzie, w którym się znajduje.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MARDROEME'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Mardroeme',
+  description = 'Triggers the transformation of all "Berserker" cards on its row.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MARDROEME'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Mardroeme',
+  description = 'Attiva la trasformazione di tutte le carte Berserker nella sua fila.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MARDROEME'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Wskrzeszenie',
+  description = 'Przejrzyj swój stos kart odrzuconych i wybierz 1 kartę jednostki (nie może to być karta bohatera). Natychmiast zagraj tę kartę.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MEDIC'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Medic',
+  description = 'Choose one Unit Card in the discard pile, excluding Heroes, and play it immediately.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MEDIC'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Medico',
+  description = 'Scegli una carta Unità dalla pila degli scarti, fatta eccezione per gli Eroi, e schierala immediatamente.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MEDIC'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Wysokie morale',
+  description = 'Karta z tą zdolnością zwiększa o 1 siłę wszystkich pozostałych kart jednostek znajdujących się w tym samym rzędzie, w którym się znajduje (nie zwiększa swojej siły).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MORALE'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Morale boost',
+  description = 'Add 1 Strength to all units on the row (excluding itself).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MORALE'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Morale',
+  description = 'Aggiunge 1 di Forza a tutte le unità nella fila (a eccezione di sé).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MORALE'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Braterstwo',
+  description = 'Przejrzyj swoją talię i rękę, odszukaj wszystkie karty wskazane na tej karcie i natychmiast je zagraj. Następnie potasuj talię.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MUSTER'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Muster',
+  description = 'Find all specified cards in the hand and deck and play them immediately, then shuffle the deck.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MUSTER'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Adunata',
+  description = 'Cerca tutte le carte specifiche nella mano e nel mazzo e giocale immediatamente. Dopodiché, mischia il mazzo.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'MUSTER'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Ulewny deszcz',
+  description = 'Zagraj tę kartę odkrytą na pole kart pogody. Siła wszystkich jednostek oblężniczych obojga graczy wynosi 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'RAIN'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Torrential rain',
+  description = 'Place face up in the Weather cards area. Sets the Strength of all siege combat Units to 1 for both players.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'RAIN'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Pioggia Torrenziale',
+  description = 'Posizionala rivolta verso l''alto nell''area delle carte Clima. Imposta il punteggio di Forza di tutte le Unità da combattimento d''assedio per entrambi i giocatori a 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'RAIN'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Pożoga',
+  description = 'Odrzuć najsilniejszą kartę (albo karty) jednostki na całym polu bitwy (nie może to być karta bohatera). Odrzuć tę kartę po zagraniu. Ten efekt dotyczy pola bitwy obu graczy.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SCORCH'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Scorch',
+  description = 'Send to the discard pile the Unit Card(s) with the highest Strength, excluding Heroes, on the entire battlefield, then discard self. This includes both player''s sides of the board.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SCORCH'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Ustione',
+  description = 'Manda nella pila degli scarti la o le carte Unità col punteggio di Forza maggiore di tutto il campo di battaglia, a eccezione degli Eroi, per poi essere scartata a sua volta. Influenza i lati di entrambi i giocatori.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SCORCH'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Pożoga',
+  description = 'Jeśli całkowita siła w rzędzie przeciwnika odpowiadającym rzędowi, do którego zagrano kartę z tą zdolnością, wynosi 10 albo więcej, odrzuć najsilniejszą kartę (albo karty) jednostki przeciwnika w tym rzędzie (nie może to być karta bohatera).'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SCORCH_ROW'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Scorch',
+  description = 'If the opponent has a total Strength of 10 or higher on the row opposite this card, the Unit Card(s) with the highest Strength, excluding Heroes, are sent to the discard pile.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SCORCH_ROW'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Ustione',
+  description = 'Se l''avversario ha un punteggio di Forza di 10 o superiore nella fila opposta a questa carta, la o le carte Unità col punteggio di Forza maggiore, a eccezione degli Eroi, sono mandate nella pila degli scarti.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SCORCH_ROW'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Szpiegostwo',
+  description = 'Zagraj kartę z tą zdolnością na pole bitwy po stronie przeciwnika (liczy się do jego całkowitej siły) i dobierz 2 karty ze swojej talii.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SPY'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Spy',
+  description = 'Play onto the opponent''s battlefield (with its Strength counting towards the opponent''s total) and draw two cards from the deck.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SPY'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Spia',
+  description = 'Gioca la carta nel campo di battaglia dell''avversario (la sua Forza contribuisce al punteggio dell''avversario) e pesca due carte dal mazzo'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SPY'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Skelligijski sztorm',
+  description = 'Zagraj tę kartę odkrytą na pole kart pogody. Siła wszystkich jednostek dalekiego zasięgu i oblężniczych obojga graczy wynosi 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'STORM'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Skellige storm',
+  description = 'Place face up in the Weather cards area. Sets the Strength of all ranged combat and siege combat Units to 1 for both players.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'STORM'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Tempesta delle Skellige',
+  description = 'Posizionala rivolta verso l''alto nell''area delle carte Clima. Imposta il punteggio di Forza di tutte le Unità da combattimento a distanza e d''assedio per entrambi i giocatori a 1.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'STORM'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Wezwanie z zaświatów',
+  description = 'Gdy karta z tą zdolnością zostanie z jakiegoś powodu odrzucona z pola bitwy (także na koniec rundy), jej miejsce zajmuje odpowiednia karta z talii pobocznej.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SUMMON'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Summon',
+  description = 'When this card is discarded from the battlefield in any instance (including at the end of a round) it is replaced with the corresponding card from the side deck.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'en'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SUMMON'
+  );
+
+UPDATE card_ability_translation
+SET
+  "name" = 'Evocazione',
+  description = 'Quando questa carta viene scartata dal campo di battaglia per qualsiasi motivo (anche alla fine di un round), viene sostituita dalla carta corrispondente del mazzo supplementare.'
+WHERE
+  language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'it'
+  )
+  AND card_ability_id = (
+    SELECT
+      id
+    FROM
+      card_ability
+    WHERE
+      code = 'SUMMON'
+  );

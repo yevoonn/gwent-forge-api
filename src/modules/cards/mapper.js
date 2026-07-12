@@ -4,7 +4,10 @@ export function mapCards(cards) {
     power: card.power,
     image_url: card.image_url,
     name: card.card_translation[0]?.name ?? null,
-    type: card.card_type.card_type_translation[0]?.name ?? null,
+    type: {
+      code: card.card_type?.code,
+      name: card.card_type?.card_type_translation[0]?.name ?? null,
+    },
     range: {
       code: card.card_range?.code,
       name: card.card_range?.card_range_translation[0]?.name ?? null,

@@ -30,6 +30,8 @@ export async function findCards({ filters, lang, sort }) {
 
       card_type: {
         select: {
+          code: true,
+
           card_type_translation: {
             where: {
               language: {

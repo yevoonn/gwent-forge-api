@@ -4196,3 +4196,7290 @@ WHERE
     WHERE
       code = 'pl'
   );
+
+UPDATE card_translation
+SET
+  "name" = 'Emhyr var Emreis, Jeż z Erlenwaldu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL001'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emhyr var Emreis, Najeźdźca z Północy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL002'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emhyr var Emreis, Cesarz Nilfgaardu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL003'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emhyr var Emreis, Pan Południa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL004'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emhyr var Emreis, Biały Płomień Tańczący na Kurhanach Wrogów'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL005'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Avallac''h'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL006'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cirilla'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL007'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Geralt z Rivii'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL008'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Letho z Gulety'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL009'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Menno Coehoorn'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL010'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Morvran Voorhis'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL011'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Tibor Eggebracht'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL012'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Triss Merigold'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL013'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Yennefer z Vengerbergu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL014'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Albrich'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL015'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Assire var Anahid'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL016'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Nilfgaardzki łucznik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL017'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Nilfgaardzki łucznik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL018'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL019_1_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL019_2_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cahir Mawr Dyffryn aep Ceallach'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL020'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krowa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL021'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cynthia'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL022'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Jaskier'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL023'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emiel Regis Rohellec Terzieff'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL024'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wsparcie łuczników'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL025'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wsparcie łuczników'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL026'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Fringilla Vigo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL027'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL028'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL029_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL029_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL029_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wielki ognisty skorpion'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL030'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Brygada Impera'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL031'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Brygada Impera'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL032'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Brygada Impera'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL033'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Brygada Impera'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL034'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Morteisen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL035'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Kawaleria Nauzicaa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL036'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Kawaleria Nauzicaa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL037'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Kawaleria Nauzicaa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL038'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Olgierd von Everec'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL039'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Puttkammer'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL040'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Rainfarn'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL041'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Renuald aep Matsen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL042'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Płotka'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL043'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zdezelowana mangonela'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL044'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Shilard Fitz-Oesterlen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL045'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Saper'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL046'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wsparcie oblężnicze'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL047'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Stefan Skellen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL048'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Sweers'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL049'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vanhemar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL050'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vattier de Rideaux'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL051'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vesemir'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL052'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Villentretenmerth'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL053'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vreemde'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL054'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Młody emisariusz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL055'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Młody emisariusz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL056'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zerrikański ognisty skorpion'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL057'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zoltan Chivay'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL058'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL059_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL059_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL059_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL060_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL060_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL060_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL061_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL061_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL061_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL062_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL062_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL062_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL063_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL063_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL063_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL064_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL064_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL064_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL065_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL065_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL065_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL066_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL066_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NIL066_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Foltest, Król Temerii'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR001'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Foltest, Dowódca Północy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR002'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Foltest, Syn Medella'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR003'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Foltest, Zdobywca'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR004'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Foltest, Żelazny Władca'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR005'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Avallac''h'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR006'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cirilla'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR007'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Esterad Thyssen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR008'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Geralt z Rivii'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR009'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Jan Natalis'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR010'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Filippa Eilhart'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR011'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Triss Merigold'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR012'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vernon Roche'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR013'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Yennefer z Vengerbergu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR014'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Balista'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR015'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Balista'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR016'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Komandos Niebieskich Pasów'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR017'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Komandos Niebieskich Pasów'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR018'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Komandos Niebieskich Pasów'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR019'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR020_1_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR020_2_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Katapulta'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR021'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Katapulta'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR022'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krowa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR023'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Rębacze z Crinfrid'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR024'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Rębacze z Crinfrid'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR025'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Rębacze z Crinfrid'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR026'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Jaskier'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR027'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Detmold'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR028'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Medyczka Burej Chorągwi'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR029'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emiel Regis Rohellec Terzieff'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR030'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR031'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR032_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR032_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR032_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Mistrz Oblężeń z Kaedwen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR033'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Mistrz Oblężeń z Kaedwen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR034'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Mistrz Oblężeń z Kaedwen'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR035'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Keira Metz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR036'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Olgierd von Everec'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR037'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Biedna Pierdolona Piechota'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR038'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Biedna Pierdolona Piechota'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR039'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Biedna Pierdolona Piechota'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR040'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Książe Stennis'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR041'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Redański piechur'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR042'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Redański piechur'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR043'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Płotka'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR044'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Sabrina Glevissig'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR045'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Sheldon Skaggs'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR046'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wieża oblężnicza'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR047'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zygfryd z Denesle'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR048'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Sigismund Dijkstra'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR049'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Sheala de Tancarville'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR050'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Talar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR051'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trebusz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR052'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trebusz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR053'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ves'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR054'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vesemir'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR055'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Villentretenmerth'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR056'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Yarpen Zigrin'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR057'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zoltan Chivay'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR058'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR059_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR059_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR059_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR060_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR060_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR060_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR061_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR061_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR061_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR062_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR062_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR062_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR063_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR063_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR063_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR064_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR064_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR064_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR065_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR065_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR065_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR066_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR066_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'NOR066_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Francesca Findabair, Stokrotka z Dolin'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO001'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Francesca Findabair, Nadzieja Dol Blathanna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO002'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Francesca Findabair, Elfka czystej krwi'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO003'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Francesca Findabair, Królowa Dol Blathanna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO004'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Francesca Findabair, Najpiękniejsza kobieta na świecie'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO005'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Avallac''h'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO006'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cirilla'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO007'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Eithné'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO008'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Geralt z Rivii'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO009'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Iorveth'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO010'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Isengrim Faoiltiarna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO011'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Saesenthessis'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO012'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Triss Merigold'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO013'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Yennefer z Vengerbergu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO014'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Barclay Els'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO015'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO016_1_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO016_2_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ciaran aep Easnillien'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO017'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krowa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO018'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Jaskier'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO019'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Dennis Cranmer'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO020'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Łucznik z Dol Blathanna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO021'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zwiadowca z Dol Blathanna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO022'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zwiadowca z Dol Blathanna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO023'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zwiadowca z Dol Blathanna'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO024'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krasnolud harcownik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO025'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krasnolud harcownik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO026'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krasnolud harcownik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO027'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Elfi harcownik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO028'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Elfi harcownik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO029'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Elfi harcownik'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO030'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emiel Regis Rohellec Terzieff'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO031'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Filavandrel aén Fidháil'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO032'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO033'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO034_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO034_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO034_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Havekarski medyk'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO035'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Havekarski medyk'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO036'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Havekarski medyk'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO037'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Havekarskie wsparcie'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO038'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Havekarskie wsparcie'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO039'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Havekarskie wsparcie'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO040'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ida Emean aep Sivney'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO041'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Obrońcy Mahakamu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO042'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Obrońcy Mahakamu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO043'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Obrońcy Mahakamu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO044'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Obrońcy Mahakamu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO045'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Obrońcy Mahakamu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO046'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Milva'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO047'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Olgierd von Everec'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO048'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Riordain'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO049'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Płotka'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO050'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Schirrú'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO051'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Toruviel'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO052'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vesemir'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO053'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Villentretenmerth'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO054'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Kadet Vrihedd'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO055'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Brygada Vrihedd'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO056'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Brygada Vrihedd'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO057'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Yaevinn'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO058'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zoltan Chivay'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO059'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO060_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO060_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO060_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO061_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO061_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO061_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO062_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO062_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO062_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO063_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO063_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO063_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO064_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO064_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO064_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO065_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO065_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO065_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO066_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO066_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO066_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO067_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO067_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SCO067_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Arnjolf, Ojcobójca'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE001'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Crach an Craite, Dzik Morski'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE002'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Eist Tuirseach, Król Cintry'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE003'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Harald an Craite, Harald Chromy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE004'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Król Bran, Władca Skellige'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE005'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Avallac''h'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE006'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cerys'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE007'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Cirilla'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE008'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Myszowór'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE009'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Geralt z Rivii'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE010'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Hemdall'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE011'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Hjalmar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE012'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Triss Merigold'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE013'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Yennefer z Vengerbergu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE014'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Berserker'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE015'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Birna Bran'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE016'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Lugos Siny'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE017'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE018_1_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Bydlęce siły zbrojne'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE018_2_2'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wojownik klanu Craite'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE019_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wojownik klanu Craite'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE019_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Wojownik klanu Craite'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE019_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Łucznik klanu Brokvar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE020_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Łucznik klanu Brokvar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE020_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Łucznik klanu Brokvar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE020_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pirat z klanu Dimun'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE021'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Tarczowniczka klanu Drummond'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE022'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Tarczowniczka klanu Drummond'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE023'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Tarczowniczka klanu Drummond'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE024'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skald klanu Heymaey'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE025'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Płatnerz klanu Tordarroch'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE026'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Krowa'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE027'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Jaskier'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE028'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Donar an Hindar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE029'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Draig Bon-Dhu'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE030'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Emiel Regis Rohellec Terzieff'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE031'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE032'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE033_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE033_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gaunter O''Dim: Cień'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE033_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Holger Czarna Ręka'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE034'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Kambi'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE035'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Lekki drakkar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE036_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Lekki drakkar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE036_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Lekki drakkar'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE036_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Lugos Szalony'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE037'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Olaf'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE038'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Olgierd von Everec'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE039'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Płotka'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE040'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Svanrige'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE041'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Przemieniony vildkaarl'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE042'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Przemieniony młody vildkaarl'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE043_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Przemieniony młody vildkaarl'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE043_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Przemieniony młody vildkaarl'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE043_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Udalryk'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE044'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Vesemir'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE045'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Villentretenmerth'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE046'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Drakkar wojenny'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE047_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Drakkar wojenny'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE047_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Drakkar wojenny'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE047_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Młody berserker'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE048_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Młody berserker'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE048_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Młody berserker'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE048_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Zoltan Chivay'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE049'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE050_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE050_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Trzaskający mróz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE050_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE051_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE051_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Czyste niebo'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE051_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE052_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE052_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Róg dowódcy'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE052_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE053_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE053_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Manekin do ćwiczeń'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE053_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE054_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE054_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Gęsta mgła'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE054_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Mardroeme'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE055_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Mardroeme'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE055_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Mardroeme'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE055_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE056_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE056_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Pożoga'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE056_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE057_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE057_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Skelligijski sztorm'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE057_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE058_1_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE058_2_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );
+
+UPDATE card_translation
+SET
+  "name" = 'Ulewny deszcz'
+WHERE
+  card_id = (
+    SELECT
+      id
+    FROM
+      card
+    WHERE
+      code = 'SKE058_3_3'
+  )
+  AND language_id = (
+    SELECT
+      id
+    FROM
+      "language"
+    WHERE
+      code = 'pl'
+  );

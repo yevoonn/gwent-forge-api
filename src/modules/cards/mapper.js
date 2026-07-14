@@ -19,5 +19,9 @@ export function mapCards(cards) {
         relationship.card_ability.card_ability_translation[0]?.description ??
         null,
     })),
+    deck: {
+      code: card.deck.code,
+      name: card.deck.deck_translation[0]?.name ?? null,
+    },
   }));
 }

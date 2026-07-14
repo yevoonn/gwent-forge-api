@@ -92,6 +92,26 @@ export async function findCards({ filters, lang, sort }) {
           },
         },
       },
+
+      deck: {
+        select: {
+          code: true,
+
+          deck_translation: {
+            where: {
+              language: {
+                code: lang,
+              },
+            },
+
+            take: 1,
+
+            select: {
+              name: true,
+            },
+          },
+        },
+      },
     },
   });
 

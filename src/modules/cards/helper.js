@@ -35,7 +35,8 @@ export function sortCards(cards, sort, lang) {
 }
 
 export function buildWhere(filters) {
-  const { deck, type, range, abilities, search, lang, is_deck_card } = filters;
+  const { deck, type, range, abilities, search, lang, is_deck_card, codes } =
+    filters;
 
   const where = {
     is_deck_card: is_deck_card,
@@ -68,6 +69,12 @@ export function buildWhere(filters) {
           },
         },
       },
+    };
+  }
+
+  if (codes?.length) {
+    where.code = {
+      in: codes,
     };
   }
 

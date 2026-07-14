@@ -17,23 +17,6 @@ export function getOrderBy(sort) {
   }
 }
 
-export function sortCards(cards, sort, lang) {
-  switch (sort) {
-    case "name_asc":
-      return [...cards].sort((a, b) =>
-        (a.name ?? "").localeCompare(b.name ?? "", lang),
-      );
-
-    case "name_desc":
-      return [...cards].sort((a, b) =>
-        (b.name ?? "").localeCompare(a.name ?? "", lang),
-      );
-
-    default:
-      return cards;
-  }
-}
-
 export function buildWhere(filters) {
   const { deck, type, range, abilities, search, lang, is_deck_card, codes } =
     filters;
@@ -93,27 +76,4 @@ export function buildWhere(filters) {
   }
 
   return where;
-}
-
-/**
- * Converts query param values into an array.
- *
- * Supports:
- * - ?ability=bond
- * - ?ability=bond,spy
- * - ?ability=bond&ability=spy
- */
-export function parseQueryArray(value) {
-  if (!value) {
-    return undefined;
-  }
-
-  if (Array.isArray(value)) {
-    return value;
-  }
-
-  return value
-    .split(",")
-    .map((v) => v.trim())
-    .filter(Boolean);
 }

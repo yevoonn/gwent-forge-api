@@ -1,5 +1,5 @@
 import { findCards } from "./service.js";
-import { parseQueryArray } from "./helper.js";
+import { parseQueryArray } from "../../utils/query.js";
 
 export async function getCards(req, res) {
   try {

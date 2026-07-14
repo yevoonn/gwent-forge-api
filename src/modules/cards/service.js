@@ -1,5 +1,6 @@
 import { prisma } from "../../lib/prisma.js";
-import { getOrderBy, sortCards, buildWhere } from "./helper.js";
+import { sortByTranslatedName } from "../../utils/query.js";
+import { getOrderBy, buildWhere } from "./query.js";
 import { mapCards } from "./mapper.js";
 
 export async function findCards({ filters, lang, sort }) {
@@ -117,5 +118,5 @@ export async function findCards({ filters, lang, sort }) {
 
   const formattedCards = mapCards(cards);
 
-  return sortCards(formattedCards, sort, lang);
+  return sortByTranslatedName(formattedCards, sort, lang);
 }

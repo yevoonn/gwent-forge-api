@@ -1,5 +1,5 @@
 import { findDecks } from "./service.js";
-import { parseQueryArray } from "./helper.js";
+import { parseQueryArray } from "../../utils/query.js";
 
 export async function getDecks(req, res) {
   try {

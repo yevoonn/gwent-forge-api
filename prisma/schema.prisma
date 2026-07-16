@@ -30,6 +30,7 @@ model card {
 model card_ability {
   id                        Int                         @id @default(autoincrement())
   code                      String                      @unique @db.VarChar(255)
+  is_special                Boolean                     @default(false)
   card_ability_relationship card_ability_relationship[]
   card_ability_translation  card_ability_translation[]
 }

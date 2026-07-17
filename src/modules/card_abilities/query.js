@@ -18,9 +18,13 @@ export function getOrderBy(sort) {
 }
 
 export function buildWhere(filters) {
-  const { search, lang, codes } = filters;
+  const { search, lang, codes, is_special } = filters;
 
   const where = {};
+
+  if (is_special === true || is_special === false) {
+    where.is_special = is_special;
+  }
 
   if (search) {
     where.card_ability_translation = {

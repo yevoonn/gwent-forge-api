@@ -7,6 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  USER
+  ADMIN
+}
+
 model card {
   id                        Int                         @id @default(autoincrement())
   deck_id                   Int
@@ -196,4 +201,17 @@ model language {
   deck_ability_translation deck_ability_translation[]
   deck_translation         deck_translation[]
   game_translation         game_translation[]
+}
+
+model user {
+  id                Int       @id @default(autoincrement())
+  email             String    @unique @db.VarChar(255)
+  username          String    @unique @db.VarChar(50)
+  passwordHash      String    @map("password_hash") @db.VarChar(255)
+  role              UserRole  @default(USER)
+  isEmailVerified   Boolean   @default(false) @map("is_email_verified")
+  createdAt         DateTime  @default(now()) @map("created_at")
+  updatedAt         DateTime  @updatedAt @map("updated_at")
+
+  @@map("user")
 }

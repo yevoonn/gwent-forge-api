@@ -1,4 +1,5 @@
 import { Router } from "express";
+import authRoutes from "../modules/auth/routes.js";
 import cardsRoutes from "../modules/cards/routes.js";
 import decksRoutes from "../modules/decks/routes.js";
 import cardAbilitiesRoutes from "../modules/card_abilities/routes.js";
@@ -7,6 +8,7 @@ import cardTypesRoutes from "../modules/card_types/routes.js";
 
 const router = Router();
 
+router.use("/auth", authRoutes);
 router.use("/cards", cardsRoutes);
 router.use("/decks", decksRoutes);
 router.use("/card-abilities", cardAbilitiesRoutes);

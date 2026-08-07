@@ -7,7 +7,7 @@ const validate = (schema) => {
     if (!result.success) {
       const details = result.error.issues.map((issue) => ({
         field: issue.path.join("."),
-        code: issue.code,
+        code: `${issue.path.join(".")}_${issue.code}`,
         message: issue.message,
       }));
 

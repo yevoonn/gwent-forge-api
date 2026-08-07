@@ -1,8 +1,10 @@
 import { Router } from "express";
 import * as authController from "./controller.js";
+import validate from "../../middleware/validate.js";
+import { registerSchema } from "./validationSchemas.js";
 
 const router = Router();
 
-router.get("/health", authController.health);
+router.post("/health", validate(registerSchema), authController.health);
 
 export default router;

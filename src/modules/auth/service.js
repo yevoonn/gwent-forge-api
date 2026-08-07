@@ -1,5 +1,11 @@
+import ValidationError from "../../errors/ValidationError.js";
+
 export function health() {
-  return {
-    status: "Auth module is ready",
-  };
+  throw new ValidationError([
+    {
+      field: "email",
+      code: "INVALID_EMAIL",
+      message: "Please enter a valid email address",
+    },
+  ]);
 }

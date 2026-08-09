@@ -6,5 +6,6 @@ import { registerSchema } from "./validationSchemas.js";
 const router = Router();
 
 router.post("/health", validate(registerSchema), authController.health);
+router.post("/register", validate(registerSchema), authController.register);
 
 export default router;

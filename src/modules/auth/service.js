@@ -2,6 +2,7 @@ import { prisma } from "../../lib/prisma.js";
 import ConflictError from "../../errors/ConflictError.js";
 import ValidationError from "../../errors/ValidationError.js";
 import { hashPassword } from "../../utils/password.js";
+import { mapPrismaError } from "../../utils/mapPrismaError.js";
 
 export function health() {
   throw new ValidationError([
@@ -44,19 +45,29 @@ export async function register({ email, username, password }) {
 
   const passwordHash = await hashPassword(password);
 
-  const user = await prisma.user.create({
-    data: {
-      email,
-      username,
-      passwordHash,
-    },
-  });
+  try {
+    const user = await prisma.user.create({
+      data: {
+        email,
+        username,
+        passwordHash,
+      },
+    });
 
-  return {
-    id: user.id,
-    email: user.email,
-    username: user.username,
-    role: user.role,
-    isEmailVerified: user.isEmailVerified,
-  };
+    return {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      role: user.role,
+      isEmailVerified: user.isEmailVerified,
+    };
+  } catch (error) {
+    const mappedError = mapPrismaError(error);
+
+    if (mappedError) {
+      throw mappedError;
+    }
+
+    throw error;
+  }
 }

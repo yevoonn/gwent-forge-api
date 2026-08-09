@@ -7,7 +7,7 @@ export function health(req, res) {
 }
 
 export async function register(req, res) {
-  const result = await authService.register(req.body);
+  const user = await authService.register(req.body);
 
-  res.status(201).json(result);
+  res.status(201).json(user);
 }

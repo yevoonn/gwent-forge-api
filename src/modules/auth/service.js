@@ -1,8 +1,10 @@
 import { prisma } from "../../lib/prisma.js";
+import AuthenticationError from "../../errors/AuthenticationError.js";
 import ConflictError from "../../errors/ConflictError.js";
 import ValidationError from "../../errors/ValidationError.js";
-import { hashPassword } from "../../utils/password.js";
+import { hashPassword, verifyPassword } from "../../utils/password.js";
 import { mapPrismaError } from "../../utils/mapPrismaError.js";
+import { generateAccessToken, generateRefreshToken } from "../../utils/jwt.js";
 
 export function health() {
   throw new ValidationError([
@@ -70,4 +72,37 @@ export async function register({ email, username, password }) {
 
     throw error;
   }
+}
+
+export async function login({ email, password }) {
+  const user = await prisma.user.findUnique({
+    where: {
+      email,
+    },
+  });
+
+  if (!user) {
+    throw new AuthenticationError();
+  }
+
+  const isPasswordValid = await verifyPassword(password, user.passwordHash);
+
+  if (!isPasswordValid) {
+    throw new AuthenticationError();
+  }
+
+  const accessToken = generateAccessToken(user);
+  const refreshToken = generateRefreshToken(user);
+
+  return {
+    user: {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      role: user.role,
+      isEmailVerified: user.isEmailVerified,
+    },
+    accessToken,
+    refreshToken,
+  };
 }

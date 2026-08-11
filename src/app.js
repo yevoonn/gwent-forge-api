@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import routes from "./routes/index.js";
 import errorHandler from "./middleware/errorHandler.js";
 
@@ -19,6 +20,7 @@ const corsOptions = isProduction
 
 app.use(cors(corsOptions));
 app.use(express.json());
+app.use(cookieParser());
 
 app.get("/health", (req, res) => {
   res.status(200).json({ ok: true });

@@ -1,4 +1,5 @@
 import * as authService from "./service.js";
+import AuthenticationError from "../../errors/AuthenticationError.js";
 
 const REFRESH_TOKEN_COOKIE = "refresh_token";
 
@@ -28,4 +29,19 @@ export async function login(req, res) {
     user: result.user,
     accessToken: result.accessToken,
   });
+}
+
+export async function refresh(req, res) {
+  const refreshToken = req.cookies[REFRESH_TOKEN_COOKIE];
+
+  if (!refreshToken) {
+    throw new AuthenticationError(
+      "INVALID_REFRESH_TOKEN",
+      "Invalid refresh token",
+    );
+  }
+
+  const result = await authService.refresh(refreshToken);
+
+  res.status(200).json(result);
 }

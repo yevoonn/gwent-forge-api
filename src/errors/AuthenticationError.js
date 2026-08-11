@@ -1,8 +1,8 @@
 import AppError from "./AppError.js";
 
 class AuthenticationError extends AppError {
-  constructor() {
-    super("Invalid credentials", 401, "INVALID_CREDENTIALS");
+  constructor(code = "INVALID_CREDENTIALS", message = "Invalid credentials") {
+    super(message, 401, code);
   }
 }
 

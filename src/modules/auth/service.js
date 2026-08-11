@@ -4,7 +4,11 @@ import ConflictError from "../../errors/ConflictError.js";
 import ValidationError from "../../errors/ValidationError.js";
 import { hashPassword, verifyPassword } from "../../utils/password.js";
 import { mapPrismaError } from "../../utils/mapPrismaError.js";
-import { generateAccessToken, generateRefreshToken } from "../../utils/jwt.js";
+import {
+  generateAccessToken,
+  generateRefreshToken,
+  verifyRefreshToken,
+} from "../../utils/jwt.js";
 
 export function health() {
   throw new ValidationError([
@@ -104,5 +108,37 @@ export async function login({ email, password }) {
     },
     accessToken,
     refreshToken,
+  };
+}
+
+export async function refresh(refreshToken) {
+  let payload;
+
+  try {
+    payload = verifyRefreshToken(refreshToken);
+  } catch {
+    throw new AuthenticationError(
+      "INVALID_REFRESH_TOKEN",
+      "Invalid refresh token",
+    );
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      id: Number(payload.sub),
+    },
+  });
+
+  if (!user) {
+    throw new AuthenticationError(
+      "INVALID_REFRESH_TOKEN",
+      "Invalid refresh token",
+    );
+  }
+
+  const accessToken = generateAccessToken(user);
+
+  return {
+    accessToken,
   };
 }

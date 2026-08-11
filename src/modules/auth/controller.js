@@ -44,6 +44,16 @@ export async function login(req, res) {
   });
 }
 
+export function logout(req, res) {
+  res.clearCookie(REFRESH_TOKEN_COOKIE, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  });
+
+  res.status(204).send();
+}
+
 export async function refresh(req, res) {
   const refreshToken = req.cookies[REFRESH_TOKEN_COOKIE];
 

@@ -10,6 +10,7 @@ const router = Router();
 router.post("/health", validate(registerSchema), authController.health);
 router.post("/register", validate(registerSchema), authController.register);
 router.post("/login", validate(loginSchema), authController.login);
+router.post("/logout", authController.logout);
 router.post("/refresh", authController.refresh);
 router.get("/profile", authenticate, authController.profile);
 router.get(

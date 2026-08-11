@@ -9,6 +9,12 @@ export function health(req, res) {
   res.status(200).json(result);
 }
 
+export function profile(req, res) {
+  res.status(200).json({
+    user: req.user,
+  });
+}
+
 export async function register(req, res) {
   const user = await authService.register(req.body);
 

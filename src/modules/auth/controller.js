@@ -15,6 +15,13 @@ export function profile(req, res) {
   });
 }
 
+export function adminProfile(req, res) {
+  res.status(200).json({
+    message: "You have access to the admin profile",
+    user: req.user,
+  });
+}
+
 export async function register(req, res) {
   const user = await authService.register(req.body);
 

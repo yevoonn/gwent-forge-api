@@ -8,6 +8,8 @@ import cardTypesRoutes from "../modules/card_types/routes.js";
 
 const router = Router();
 
+// Module routers are mounted under their respective API prefixes.
+// For example, authRoutes handles /api/auth/* endpoints.
 router.use("/auth", authRoutes);
 router.use("/cards", cardsRoutes);
 router.use("/decks", decksRoutes);

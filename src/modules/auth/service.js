@@ -21,6 +21,8 @@ export function health() {
 }
 
 export async function register({ email, username, password }) {
+  // Check for existing users before creating a new account.
+  // This allows us to return field-specific conflict errors to the client.
   const existingUser = await prisma.user.findFirst({
     where: {
       OR: [{ email }, { username }],
@@ -49,6 +51,9 @@ export async function register({ email, username, password }) {
     throw new ConflictError(details);
   }
 
+  // Passwords are never stored in plaintext.
+  // Argon2id produces a secure password hash containing the parameters
+  // and salt required for later verification.
   const passwordHash = await hashPassword(password);
 
   try {
@@ -60,6 +65,7 @@ export async function register({ email, username, password }) {
       },
     });
 
+    // Never return the password hash to the client.
     return {
       id: user.id,
       email: user.email,
@@ -68,6 +74,9 @@ export async function register({ email, username, password }) {
       isEmailVerified: user.isEmailVerified,
     };
   } catch (error) {
+    // The pre-check above improves the user experience, but it is not
+    // sufficient to guarantee uniqueness in concurrent requests.
+    // The database remains the final authority and may still return P2002.
     const mappedError = mapPrismaError(error);
 
     if (mappedError) {
@@ -85,6 +94,8 @@ export async function login({ email, password }) {
     },
   });
 
+  // Use the same authentication error for a missing user and an invalid
+  // password so that the API does not reveal which email addresses exist.
   if (!user) {
     throw new AuthenticationError();
   }
@@ -95,6 +106,8 @@ export async function login({ email, password }) {
     throw new AuthenticationError();
   }
 
+  // The access token is short-lived and used to authorize API requests.
+  // The refresh token is long-lived and used only to obtain a new access token.
   const accessToken = generateAccessToken(user);
   const refreshToken = generateRefreshToken(user);
 
@@ -115,6 +128,8 @@ export async function refresh(refreshToken) {
   let payload;
 
   try {
+    // Verify the refresh token using the dedicated refresh token secret.
+    // This also checks its signature and expiration.
     payload = verifyRefreshToken(refreshToken);
   } catch {
     throw new AuthenticationError(
@@ -123,6 +138,8 @@ export async function refresh(refreshToken) {
     );
   }
 
+  // The token contains the user's ID as its subject.
+  // The user must still exist in the database for the refresh to succeed.
   const user = await prisma.user.findUnique({
     where: {
       id: Number(payload.sub),
@@ -136,6 +153,7 @@ export async function refresh(refreshToken) {
     );
   }
 
+  // A valid refresh token allows issuing a new short-lived access token.
   const accessToken = generateAccessToken(user);
 
   return {

@@ -1,3 +1,8 @@
+/**
+ * Convert application errors into a consistent API response.
+ * Unknown errors fall back to a generic 500 response so that
+ * internal implementation details are not exposed to the client.
+ */
 const errorHandler = (err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 

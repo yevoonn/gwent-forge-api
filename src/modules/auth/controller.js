@@ -31,6 +31,10 @@ export async function register(req, res) {
 export async function login(req, res) {
   const result = await authService.login(req.body);
 
+  // The refresh token is stored in an HttpOnly cookie so that
+  // client-side JavaScript cannot access it directly.
+  // The access token is returned in the response and is intended
+  // to be sent in the Authorization header for protected requests.
   res.cookie(REFRESH_TOKEN_COOKIE, result.refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -38,6 +42,7 @@ export async function login(req, res) {
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
+  // The refresh token is intentionally not returned in the response body.
   res.status(200).json({
     user: result.user,
     accessToken: result.accessToken,
@@ -45,6 +50,8 @@ export async function login(req, res) {
 }
 
 export function logout(req, res) {
+  // Removing the refresh_token cookie ends the browser's ability
+  // to request a new access token through /refresh.
   res.clearCookie(REFRESH_TOKEN_COOKIE, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -55,6 +62,8 @@ export function logout(req, res) {
 }
 
 export async function refresh(req, res) {
+  // The refresh token is intentionally read only from the HttpOnly cookie.
+  // It is never accepted from the request body or Authorization header.
   const refreshToken = req.cookies[REFRESH_TOKEN_COOKIE];
 
   if (!refreshToken) {

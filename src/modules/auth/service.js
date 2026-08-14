@@ -138,6 +138,9 @@ export async function login({ email, password }) {
   };
 }
 
+const getInvalidRefreshTokenError = () =>
+  new AuthenticationError("INVALID_REFRESH_TOKEN", "Invalid refresh token");
+
 export async function refresh(refreshToken) {
   let payload;
 
@@ -146,25 +149,37 @@ export async function refresh(refreshToken) {
     // This also checks its signature and expiration.
     payload = verifyRefreshToken(refreshToken);
   } catch {
-    throw new AuthenticationError(
-      "INVALID_REFRESH_TOKEN",
-      "Invalid refresh token",
-    );
+    throw getInvalidRefreshTokenError();
   }
 
-  // The token contains the user's ID as its subject.
+  const userId = Number(payload.sub);
+  const tokenHash = hashToken(refreshToken);
+
+  // Find the active user session corresponding to this refresh token.
+  const session = await prisma.user_session.findFirst({
+    where: {
+      tokenHash,
+      userId,
+      revokedAt: null,
+      expiresAt: {
+        gt: new Date(), // gt - greater than
+      },
+    },
+  });
+
+  if (!session) {
+    throw getInvalidRefreshTokenError();
+  }
+
   // The user must still exist in the database for the refresh to succeed.
   const user = await prisma.user.findUnique({
     where: {
-      id: Number(payload.sub),
+      id: userId,
     },
   });
 
   if (!user) {
-    throw new AuthenticationError(
-      "INVALID_REFRESH_TOKEN",
-      "Invalid refresh token",
-    );
+    throw getInvalidRefreshTokenError();
   }
 
   // A valid refresh token allows issuing a new short-lived access token.

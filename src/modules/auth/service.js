@@ -4,10 +4,12 @@ import ConflictError from "../../errors/ConflictError.js";
 import ValidationError from "../../errors/ValidationError.js";
 import { hashPassword, verifyPassword } from "../../utils/password.js";
 import { mapPrismaError } from "../../utils/mapPrismaError.js";
+import { hashToken } from "../../utils/tokenHash.js";
 import {
   generateAccessToken,
   generateRefreshToken,
   verifyRefreshToken,
+  parseJWTDuration,
 } from "../../utils/jwt.js";
 
 export function health() {
@@ -110,6 +112,18 @@ export async function login({ email, password }) {
   // The refresh token is long-lived and used only to obtain a new access token.
   const accessToken = generateAccessToken(user);
   const refreshToken = generateRefreshToken(user);
+
+  const refreshTokenExpiration = new Date(
+    Date.now() + parseJWTDuration(process.env.JWT_REFRESH_EXPIRES_IN),
+  );
+
+  await prisma.user_session.create({
+    data: {
+      userId: user.id,
+      tokenHash: hashToken(refreshToken),
+      expiresAt: refreshTokenExpiration,
+    },
+  });
 
   return {
     user: {

@@ -1,5 +1,6 @@
 import * as authService from "./service.js";
 import AuthenticationError from "../../errors/AuthenticationError.js";
+import { parseJWTDuration } from "../../utils/jwt.js";
 
 const REFRESH_TOKEN_COOKIE = "refresh_token";
 
@@ -31,6 +32,10 @@ export async function register(req, res) {
 export async function login(req, res) {
   const result = await authService.login(req.body);
 
+  const refreshTokenExpiration = parseJWTDuration(
+    process.env.JWT_REFRESH_EXPIRES_IN,
+  );
+
   // The refresh token is stored in an HttpOnly cookie so that
   // client-side JavaScript cannot access it directly.
   // The access token is returned in the response and is intended
@@ -39,7 +44,7 @@ export async function login(req, res) {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-    maxAge: 7 * 24 * 60 * 60 * 1000,
+    maxAge: refreshTokenExpiration,
   });
 
   // The refresh token is intentionally not returned in the response body.

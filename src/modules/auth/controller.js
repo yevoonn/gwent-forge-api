@@ -32,10 +32,6 @@ export async function register(req, res) {
 export async function login(req, res) {
   const result = await authService.login(req.body);
 
-  const refreshTokenExpiration = parseJWTDuration(
-    process.env.JWT_REFRESH_EXPIRES_IN,
-  );
-
   // The refresh token is stored in an HttpOnly cookie so that
   // client-side JavaScript cannot access it directly.
   // The access token is returned in the response and is intended
@@ -44,7 +40,7 @@ export async function login(req, res) {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-    maxAge: refreshTokenExpiration,
+    maxAge: parseJWTDuration(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
   // The refresh token is intentionally not returned in the response body.
@@ -80,5 +76,17 @@ export async function refresh(req, res) {
 
   const result = await authService.refresh(refreshToken);
 
-  res.status(200).json(result);
+  // Replace the old refresh token with the newly rotated one.
+  // The token remains inaccessible to client-side JavaScript.
+  res.cookie(REFRESH_TOKEN_COOKIE, result.refreshToken, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    maxAge: parseJWTDuration(process.env.JWT_REFRESH_EXPIRES_IN),
+  });
+
+  // Only the access token is exposed to the client.
+  res.status(200).json({
+    accessToken: result.accessToken,
+  });
 }

@@ -111,7 +111,7 @@ export async function login({ email, password }) {
   // The access token is short-lived and used to authorize API requests.
   // The refresh token is long-lived and used only to obtain a new access token.
   const accessToken = generateAccessToken(user);
-  const refreshToken = generateRefreshToken(user);
+  const refreshToken = generateRefreshToken(user.id);
 
   const refreshTokenExpiration = new Date(
     Date.now() + parseJWTDuration(process.env.JWT_REFRESH_EXPIRES_IN),
@@ -140,6 +140,40 @@ export async function login({ email, password }) {
 
 const getInvalidRefreshTokenError = () =>
   new AuthenticationError("INVALID_REFRESH_TOKEN", "Invalid refresh token");
+
+async function rotateRefreshToken(sessionId, userId) {
+  // Generate a new refresh token instead of reusing the current one.
+  // The current session will be revoked and replaced with a new session.
+  const newRefreshToken = generateRefreshToken(userId);
+
+  const refreshTokenExpiration = new Date(
+    Date.now() + parseJWTDuration(process.env.JWT_REFRESH_EXPIRES_IN),
+  );
+
+  // Rotate the refresh token atomically:
+  // 1. revoke the current session,
+  // 2. create a new session for the new refresh token.
+  await prisma.$transaction([
+    prisma.user_session.update({
+      where: {
+        id: sessionId,
+      },
+      data: {
+        revokedAt: new Date(),
+      },
+    }),
+
+    prisma.user_session.create({
+      data: {
+        userId,
+        tokenHash: hashToken(newRefreshToken),
+        expiresAt: refreshTokenExpiration,
+      },
+    }),
+  ]);
+
+  return newRefreshToken;
+}
 
 export async function refresh(refreshToken) {
   let payload;
@@ -182,10 +216,15 @@ export async function refresh(refreshToken) {
     throw getInvalidRefreshTokenError();
   }
 
-  // A valid refresh token allows issuing a new short-lived access token.
+  // Rotate the refresh token by revoking the current session
+  // and creating a new session atomically.
+  const newRefreshToken = await rotateRefreshToken(session.id, userId);
+
+  // Issue a new short-lived access token for the user.
   const accessToken = generateAccessToken(user);
 
   return {
     accessToken,
+    refreshToken: newRefreshToken,
   };
 }

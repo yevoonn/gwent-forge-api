@@ -15,9 +15,9 @@ export function generateAccessToken(user) {
  * Refresh tokens contain only the user's ID.
  * They are long-lived and are used exclusively to obtain a new access token.
  */
-export function generateRefreshToken(user) {
+export function generateRefreshToken(userId) {
   return jwt.sign({}, process.env.JWT_REFRESH_SECRET, {
-    subject: String(user.id),
+    subject: String(userId),
     expiresIn: process.env.JWT_REFRESH_EXPIRES_IN,
   });
 }

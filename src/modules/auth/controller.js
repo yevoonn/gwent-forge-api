@@ -50,7 +50,13 @@ export async function login(req, res) {
   });
 }
 
-export function logout(req, res) {
+export async function logout(req, res) {
+  const refreshToken = req.cookies[REFRESH_TOKEN_COOKIE];
+
+  if (refreshToken) {
+    await authService.revokeRefreshToken(refreshToken);
+  }
+
   // Removing the refresh_token cookie ends the browser's ability
   // to request a new access token through /refresh.
   res.clearCookie(REFRESH_TOKEN_COOKIE, {

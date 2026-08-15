@@ -175,6 +175,22 @@ async function rotateRefreshToken(sessionId, userId) {
   return newRefreshToken;
 }
 
+export async function revokeRefreshToken(refreshToken) {
+  const tokenHash = hashToken(refreshToken);
+
+  // Revoke the active session associated with this refresh token.
+  // The refresh token itself is never stored in the database.
+  await prisma.user_session.updateMany({
+    where: {
+      tokenHash,
+      revokedAt: null,
+    },
+    data: {
+      revokedAt: new Date(),
+    },
+  });
+}
+
 export async function refresh(refreshToken) {
   let payload;
 

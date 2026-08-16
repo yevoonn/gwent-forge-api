@@ -240,6 +240,13 @@ export async function refresh(refreshToken) {
   const accessToken = generateAccessToken(user);
 
   return {
+    user: {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      role: user.role,
+      isEmailVerified: user.isEmailVerified,
+    },
     accessToken,
     refreshToken: newRefreshToken,
   };

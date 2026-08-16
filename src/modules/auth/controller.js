@@ -91,8 +91,9 @@ export async function refresh(req, res) {
     maxAge: parseJWTDuration(process.env.JWT_REFRESH_EXPIRES_IN),
   });
 
-  // Only the access token is exposed to the client.
+  // Only the user and access token are exposed to the client.
   res.status(200).json({
+    user: result.user,
     accessToken: result.accessToken,
   });
 }

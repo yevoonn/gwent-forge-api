@@ -6,20 +6,17 @@ import errorHandler from "./middleware/errorHandler.js";
 
 const app = express();
 
-const isProduction = process.env.NODE_ENV === "production";
-
-// In production, the API must explicitly know which frontend is allowed
+// The API must explicitly know which frontend is allowed
 // to make cross-origin requests. This is especially important because
 // authentication uses HttpOnly cookies.
-if (isProduction && !process.env.FRONTEND_URL) {
+if (!process.env.FRONTEND_URL) {
   throw new Error("FRONTEND_URL environment variable is not defined.");
 }
 
-const corsOptions = isProduction
-  ? {
-      origin: process.env.FRONTEND_URL,
-    }
-  : {};
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
+};
 
 app.use(cors(corsOptions));
 app.use(express.json());

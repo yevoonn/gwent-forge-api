@@ -22,6 +22,26 @@ export function health() {
   ]);
 }
 
+export async function getProfile(userId) {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+  });
+
+  if (!user) {
+    throw new AuthenticationError("USER_NOT_FOUND", "User not found");
+  }
+
+  return {
+    id: user.id,
+    email: user.email,
+    username: user.username,
+    role: user.role,
+    isEmailVerified: user.isEmailVerified,
+  };
+}
+
 export async function register({ email, username, password }) {
   // Check for existing users before creating a new account.
   // This allows us to return field-specific conflict errors to the client.

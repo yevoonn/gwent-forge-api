@@ -10,9 +10,11 @@ export function health(req, res) {
   res.status(200).json(result);
 }
 
-export function profile(req, res) {
+export async function profile(req, res) {
+  const user = await authService.getProfile(req.user.id);
+
   res.status(200).json({
-    user: req.user,
+    user,
   });
 }
 

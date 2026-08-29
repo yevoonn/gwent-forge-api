@@ -3,7 +3,11 @@ import * as authController from "./controller.js";
 import validate from "../../middleware/validate.js";
 import authenticate from "../../middleware/authenticate.js";
 import requireRole from "../../middleware/requireRole.js";
-import { loginSchema, registerSchema } from "./validationSchemas.js";
+import {
+  loginSchema,
+  registerSchema,
+  updateProfileSchema,
+} from "./validationSchemas.js";
 
 const router = Router();
 
@@ -18,6 +22,17 @@ router.post("/refresh", authController.refresh);
 // 1. authenticate verifies the access token.
 // 2. profile uses the authenticated user's data from req.user.
 router.get("/profile", authenticate, authController.profile);
+
+// Protected endpoint for updating the authenticated user's profile:
+// 1. authenticate verifies the access token.
+// 2. validate checks the request body.
+// 3. updateProfile uses req.user.id to identify the user.
+router.patch(
+  "/profile",
+  authenticate,
+  validate(updateProfileSchema),
+  authController.updateProfile,
+);
 
 // Role-protected endpoint:
 // 1. authenticate verifies the access token.

@@ -18,6 +18,14 @@ export async function profile(req, res) {
   });
 }
 
+export async function updateProfile(req, res) {
+  const user = await authService.updateProfile(req.user.id, req.body);
+
+  res.status(200).json({
+    user,
+  });
+}
+
 export function adminProfile(req, res) {
   res.status(200).json({
     message: "You have access to the admin profile",

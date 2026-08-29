@@ -38,3 +38,15 @@ export const loginSchema = z.object({
     .min(8, "Password must contain at least 8 characters")
     .max(128, "Password must contain at most 128 characters"),
 });
+
+/**
+ * Schema used when updating the authenticated user's profile.
+ * Currently, only the username can be changed.
+ */
+export const updateProfileSchema = z.object({
+  username: z
+    .string()
+    .trim()
+    .min(3, "Username must contain at least 3 characters")
+    .max(12, "Username must contain at most 12 characters"),
+});

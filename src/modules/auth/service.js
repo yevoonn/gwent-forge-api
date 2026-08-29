@@ -42,6 +42,57 @@ export async function getProfile(userId) {
   };
 }
 
+export async function updateProfile(userId, { username }) {
+  // Check whether the new username is already used by another user.
+  // The current user is excluded because keeping the same username is valid.
+  const existingUser = await prisma.user.findFirst({
+    where: {
+      username,
+      NOT: {
+        id: userId,
+      },
+    },
+  });
+
+  if (existingUser) {
+    throw new ConflictError([
+      {
+        field: "username",
+        code: "USERNAME_ALREADY_EXISTS",
+        message: "Username is already in use",
+      },
+    ]);
+  }
+
+  try {
+    const user = await prisma.user.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        username,
+      },
+    });
+
+    // Never return the password hash to the client.
+    return {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      role: user.role,
+      isEmailVerified: user.isEmailVerified,
+    };
+  } catch (error) {
+    const mappedError = mapPrismaError(error);
+
+    if (mappedError) {
+      throw mappedError;
+    }
+
+    throw error;
+  }
+}
+
 export async function register({ email, username, password }) {
   // Check for existing users before creating a new account.
   // This allows us to return field-specific conflict errors to the client.
@@ -96,9 +147,6 @@ export async function register({ email, username, password }) {
       isEmailVerified: user.isEmailVerified,
     };
   } catch (error) {
-    // The pre-check above improves the user experience, but it is not
-    // sufficient to guarantee uniqueness in concurrent requests.
-    // The database remains the final authority and may still return P2002.
     const mappedError = mapPrismaError(error);
 
     if (mappedError) {

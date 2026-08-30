@@ -47,7 +47,10 @@ export async function updateProfile(userId, { username }) {
   // The current user is excluded because keeping the same username is valid.
   const existingUser = await prisma.user.findFirst({
     where: {
-      username,
+      username: {
+        equals: username,
+        mode: "insensitive",
+      },
       NOT: {
         id: userId,
       },
@@ -98,7 +101,15 @@ export async function register({ email, username, password }) {
   // This allows us to return field-specific conflict errors to the client.
   const existingUser = await prisma.user.findFirst({
     where: {
-      OR: [{ email }, { username }],
+      OR: [
+        { email },
+        {
+          username: {
+            equals: username,
+            mode: "insensitive",
+          },
+        },
+      ],
     },
   });
 
@@ -113,7 +124,7 @@ export async function register({ email, username, password }) {
       });
     }
 
-    if (existingUser.username === username) {
+    if (existingUser.username.toLowerCase() === username.toLowerCase()) {
       details.push({
         field: "username",
         code: "USERNAME_ALREADY_EXISTS",

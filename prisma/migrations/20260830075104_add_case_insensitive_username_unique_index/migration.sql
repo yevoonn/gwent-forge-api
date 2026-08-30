@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "user_username_lower_unique" ON "user" (LOWER("username"));

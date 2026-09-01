@@ -7,6 +7,7 @@ import {
   loginSchema,
   registerSchema,
   updateProfileSchema,
+  changePasswordSchema,
 } from "./validationSchemas.js";
 
 const router = Router();
@@ -32,6 +33,18 @@ router.patch(
   authenticate,
   validate(updateProfileSchema),
   authController.updateProfile,
+);
+
+// Protected endpoint for changing the authenticated user's password:
+// 1. authenticate verifies the access token.
+// 2. validate checks the request body.
+// 3. changePassword verifies the current password,
+//    updates the password and invalidates all user sessions.
+router.patch(
+  "/password",
+  authenticate,
+  validate(changePasswordSchema),
+  authController.changePassword,
 );
 
 // Role-protected endpoint:

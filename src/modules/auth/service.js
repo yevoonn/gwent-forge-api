@@ -330,3 +330,50 @@ export async function refresh(refreshToken) {
     refreshToken: newRefreshToken,
   };
 }
+
+export async function changePassword(userId, { currentPassword, newPassword }) {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+  });
+
+  if (!user) {
+    throw new AuthenticationError("USER_NOT_FOUND", "User not found");
+  }
+
+  const isCurrentPasswordValid = await verifyPassword(
+    currentPassword,
+    user.passwordHash,
+  );
+
+  if (!isCurrentPasswordValid) {
+    throw new AuthenticationError(
+      "INVALID_CURRENT_PASSWORD",
+      "Current password is incorrect",
+    );
+  }
+
+  const passwordHash = await hashPassword(newPassword);
+
+  await prisma.$transaction([
+    prisma.user.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        passwordHash,
+      },
+    }),
+
+    prisma.user_session.updateMany({
+      where: {
+        userId,
+        revokedAt: null,
+      },
+      data: {
+        revokedAt: new Date(),
+      },
+    }),
+  ]);
+}

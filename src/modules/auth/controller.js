@@ -26,6 +26,12 @@ export async function updateProfile(req, res) {
   });
 }
 
+export async function changePassword(req, res) {
+  await authService.changePassword(req.user.id, req.body);
+
+  res.status(204).send();
+}
+
 export function adminProfile(req, res) {
   res.status(200).json({
     message: "You have access to the admin profile",

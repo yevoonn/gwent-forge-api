@@ -1,7 +1,7 @@
 import AppError from "./AppError.js";
 
 class ValidationError extends AppError {
-  constructor(details) {
+  constructor(details: unknown[]) {
     super("Validation failed", 400, "VALIDATION_ERROR", details);
   }
 }

@@ -1,7 +1,12 @@
+import type { NextFunction, Request, Response } from "express";
 import AuthenticationError from "../errors/AuthenticationError.js";
 import { verifyAccessToken } from "../utils/jwt.js";
 
-const authenticate = (req, res, next) => {
+const authenticate = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void => {
   // Access tokens are sent by the client in the Authorization header.
   const authorizationHeader = req.headers.authorization;
 

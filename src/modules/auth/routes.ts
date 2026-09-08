@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router, type RequestHandler } from "express";
 import * as authController from "./controller.js";
 import validate from "../../middleware/validate.js";
 import authenticate from "../../middleware/authenticate.js";
@@ -22,7 +22,7 @@ router.post("/refresh", authController.refresh);
 // Protected endpoint:
 // 1. authenticate verifies the access token.
 // 2. profile uses the authenticated user's data from req.user.
-router.get("/profile", authenticate, authController.profile);
+router.get("/profile", authenticate, authController.profile as RequestHandler);
 
 // Protected endpoint for updating the authenticated user's profile:
 // 1. authenticate verifies the access token.
@@ -32,7 +32,7 @@ router.patch(
   "/profile",
   authenticate,
   validate(updateProfileSchema),
-  authController.updateProfile,
+  authController.updateProfile as RequestHandler,
 );
 
 // Protected endpoint for changing the authenticated user's password:
@@ -44,7 +44,7 @@ router.patch(
   "/password",
   authenticate,
   validate(changePasswordSchema),
-  authController.changePassword,
+  authController.changePassword as RequestHandler,
 );
 
 // Role-protected endpoint:
@@ -54,7 +54,7 @@ router.get(
   "/admin-profile",
   authenticate,
   requireRole("ADMIN"),
-  authController.adminProfile,
+  authController.adminProfile as RequestHandler,
 );
 
 export default router;

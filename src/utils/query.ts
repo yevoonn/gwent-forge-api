@@ -6,22 +6,26 @@
  * - ?code=A,B
  * - ?code=A&code=B
  */
-export function parseQueryArray(value) {
+export function parseQueryArray(value: unknown): string[] | undefined {
   if (!value) {
     return undefined;
   }
 
   if (Array.isArray(value)) {
-    return value;
+    return value as string[];
   }
 
-  return value
+  return String(value)
     .split(",")
     .map((v) => v.trim())
     .filter(Boolean);
 }
 
-export function sortByTranslatedName(items, sort, lang) {
+export function sortByTranslatedName<T extends { name?: string | null }>(
+  items: T[],
+  sort: string | undefined,
+  lang: string,
+): T[] {
   switch (sort) {
     case "name_asc":
       return [...items].sort((a, b) =>

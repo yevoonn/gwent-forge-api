@@ -1,7 +1,9 @@
 import { Prisma } from "@prisma/client";
-import ConflictError from "../errors/ConflictError.js";
+import ConflictError, {
+  type ConflictErrorDetail,
+} from "../errors/ConflictError.js";
 
-export function mapPrismaError(error) {
+export function mapPrismaError(error: unknown): ConflictError | null {
   // P2002 is Prisma's unique-constraint violation.
   // Convert it into an application-level ConflictError so that
   // the API does not expose Prisma-specific implementation details.
@@ -9,10 +11,10 @@ export function mapPrismaError(error) {
     error instanceof Prisma.PrismaClientKnownRequestError &&
     error.code === "P2002"
   ) {
-    const fields = error.meta?.target ?? [];
+    const fields = (error.meta?.target as string[] | undefined) ?? [];
 
     const details = fields
-      .map((field) => {
+      .map((field): ConflictErrorDetail | null => {
         if (field === "email") {
           return {
             field: "email",
@@ -31,7 +33,7 @@ export function mapPrismaError(error) {
 
         return null;
       })
-      .filter(Boolean);
+      .filter((detail): detail is ConflictErrorDetail => detail !== null);
 
     // Only map known fields. Unknown unique constraints should not
     // accidentally be presented as an email/username conflict.

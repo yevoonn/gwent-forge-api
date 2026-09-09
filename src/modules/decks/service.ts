@@ -1,9 +1,19 @@
 import { prisma } from "../../lib/prisma.js";
 import { sortByTranslatedName } from "../../utils/query.js";
-import { getOrderBy, buildWhere } from "./query.js";
-import { mapDecks } from "./mapper.js";
+import { getOrderBy, buildWhere, type DeckFilters } from "./query.js";
+import { mapDecks, type MappedDeck } from "./mapper.js";
 
-export async function findDecks({ filters, lang, sort }) {
+interface FindDecksParams {
+  filters: DeckFilters;
+  lang: string;
+  sort: string | undefined;
+}
+
+export async function findDecks({
+  filters,
+  lang,
+  sort,
+}: FindDecksParams): Promise<MappedDeck[]> {
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
@@ -12,19 +22,10 @@ export async function findDecks({ filters, lang, sort }) {
     orderBy,
     select: {
       code: true,
-
       deck_translation: {
-        where: {
-          language: {
-            code: lang,
-          },
-        },
-
+        where: { language: { code: lang } },
         take: 1,
-
-        select: {
-          name: true,
-        },
+        select: { name: true },
       },
     },
   });

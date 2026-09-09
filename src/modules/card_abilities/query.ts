@@ -1,4 +1,15 @@
-export function getOrderBy(sort) {
+import type { Prisma } from "@prisma/client";
+
+export interface CardAbilityFilters {
+  search?: string;
+  lang: string;
+  codes?: string[];
+  is_special?: boolean;
+}
+
+export function getOrderBy(
+  sort: string | undefined,
+): Prisma.card_abilityOrderByWithRelationInput {
   switch (sort) {
     case "id_asc":
       return { id: "asc" };
@@ -17,10 +28,12 @@ export function getOrderBy(sort) {
   }
 }
 
-export function buildWhere(filters) {
+export function buildWhere(
+  filters: CardAbilityFilters,
+): Prisma.card_abilityWhereInput {
   const { search, lang, codes, is_special } = filters;
 
-  const where = {};
+  const where: Prisma.card_abilityWhereInput = {};
 
   if (is_special === true || is_special === false) {
     where.is_special = is_special;
@@ -29,21 +42,14 @@ export function buildWhere(filters) {
   if (search) {
     where.card_ability_translation = {
       some: {
-        language: {
-          code: lang,
-        },
-        name: {
-          contains: search,
-          mode: "insensitive",
-        },
+        language: { code: lang },
+        name: { contains: search, mode: "insensitive" },
       },
     };
   }
 
   if (codes?.length) {
-    where.code = {
-      in: codes,
-    };
+    where.code = { in: codes };
   }
 
   return where;

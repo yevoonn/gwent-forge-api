@@ -1,9 +1,19 @@
 import { prisma } from "../../lib/prisma.js";
 import { sortByTranslatedName } from "../../utils/query.js";
-import { getOrderBy, buildWhere } from "./query.js";
-import { mapCardAbilities } from "./mapper.js";
+import { getOrderBy, buildWhere, type CardAbilityFilters } from "./query.js";
+import { mapCardAbilities, type MappedCardAbility } from "./mapper.js";
 
-export async function findCardAbilities({ filters, lang, sort }) {
+interface FindCardAbilitiesParams {
+  filters: CardAbilityFilters;
+  lang: string;
+  sort: string | undefined;
+}
+
+export async function findCardAbilities({
+  filters,
+  lang,
+  sort,
+}: FindCardAbilitiesParams): Promise<MappedCardAbility[]> {
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
@@ -15,16 +25,12 @@ export async function findCardAbilities({ filters, lang, sort }) {
 
       card_ability_translation: {
         where: {
-          language: {
-            code: lang,
-          },
+          language: { code: lang },
         },
 
         take: 1,
 
-        select: {
-          name: true,
-        },
+        select: { name: true },
       },
     },
   });

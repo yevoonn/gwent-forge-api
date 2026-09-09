@@ -1,9 +1,19 @@
 import { prisma } from "../../lib/prisma.js";
 import { sortByTranslatedName } from "../../utils/query.js";
-import { getOrderBy, buildWhere } from "./query.js";
-import { mapCardRanges } from "./mapper.js";
+import { getOrderBy, buildWhere, type CardRangeFilters } from "./query.js";
+import { mapCardRanges, type MappedCardRange } from "./mapper.js";
 
-export async function findCardRanges({ filters, lang, sort }) {
+interface FindCardRangesParams {
+  filters: CardRangeFilters;
+  lang: string;
+  sort: string | undefined;
+}
+
+export async function findCardRanges({
+  filters,
+  lang,
+  sort,
+}: FindCardRangesParams): Promise<MappedCardRange[]> {
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
@@ -14,14 +24,10 @@ export async function findCardRanges({ filters, lang, sort }) {
       code: true,
       card_range_translation: {
         where: {
-          language: {
-            code: lang,
-          },
+          language: { code: lang },
         },
         take: 1,
-        select: {
-          name: true,
-        },
+        select: { name: true },
       },
     },
   });

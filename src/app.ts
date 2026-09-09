@@ -3,18 +3,12 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import routes from "./routes/index.js";
 import errorHandler from "./middleware/errorHandler.js";
+import { env } from "./config/env.js";
 
 const app = express();
 
-// The API must explicitly know which frontend is allowed
-// to make cross-origin requests. This is especially important because
-// authentication uses HttpOnly cookies.
-if (!process.env.FRONTEND_URL) {
-  throw new Error("FRONTEND_URL environment variable is not defined.");
-}
-
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: env.FRONTEND_URL,
   credentials: true,
 };
 

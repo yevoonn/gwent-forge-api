@@ -20,11 +20,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "declaration": false,
-
-    "allowJs": true,
-    "checkJs": false
+    "declaration": false
   },
-  "include": ["src/**/*.ts", "src/**/*.js"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,9 +1,19 @@
 import { prisma } from "../../lib/prisma.js";
 import { sortByTranslatedName } from "../../utils/query.js";
-import { getOrderBy, buildWhere } from "./query.js";
-import { mapCards } from "./mapper.js";
+import { getOrderBy, buildWhere, type CardFilters } from "./query.js";
+import { mapCards, type MappedCard } from "./mapper.js";
 
-export async function findCards({ filters, lang, sort }) {
+interface FindCardsParams {
+  filters: CardFilters;
+  lang: string;
+  sort: string | undefined;
+}
+
+export async function findCards({
+  filters,
+  lang,
+  sort,
+}: FindCardsParams): Promise<MappedCard[]> {
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
@@ -16,35 +26,18 @@ export async function findCards({ filters, lang, sort }) {
       image_url: true,
 
       card_translation: {
-        where: {
-          language: {
-            code: lang,
-          },
-        },
-
+        where: { language: { code: lang } },
         take: 1,
-
-        select: {
-          name: true,
-        },
+        select: { name: true },
       },
 
       card_type: {
         select: {
           code: true,
-
           card_type_translation: {
-            where: {
-              language: {
-                code: lang,
-              },
-            },
-
+            where: { language: { code: lang } },
             take: 1,
-
-            select: {
-              name: true,
-            },
+            select: { name: true },
           },
         },
       },
@@ -52,19 +45,10 @@ export async function findCards({ filters, lang, sort }) {
       card_range: {
         select: {
           code: true,
-
           card_range_translation: {
-            where: {
-              language: {
-                code: lang,
-              },
-            },
-
+            where: { language: { code: lang } },
             take: 1,
-
-            select: {
-              name: true,
-            },
+            select: { name: true },
           },
         },
       },
@@ -74,20 +58,10 @@ export async function findCards({ filters, lang, sort }) {
           card_ability: {
             select: {
               code: true,
-
               card_ability_translation: {
-                where: {
-                  language: {
-                    code: lang,
-                  },
-                },
-
+                where: { language: { code: lang } },
                 take: 1,
-
-                select: {
-                  name: true,
-                  description: true,
-                },
+                select: { name: true, description: true },
               },
             },
           },
@@ -97,19 +71,10 @@ export async function findCards({ filters, lang, sort }) {
       deck: {
         select: {
           code: true,
-
           deck_translation: {
-            where: {
-              language: {
-                code: lang,
-              },
-            },
-
+            where: { language: { code: lang } },
             take: 1,
-
-            select: {
-              name: true,
-            },
+            select: { name: true },
           },
         },
       },

@@ -9,7 +9,7 @@ export interface CardAbilityFilters {
 
 export function getOrderBy(
   sort: string | undefined,
-): Prisma.card_abilityOrderByWithRelationInput {
+): Prisma.CardAbilityOrderByWithRelationInput {
   switch (sort) {
     case "id_asc":
       return { id: "asc" };
@@ -30,10 +30,10 @@ export function getOrderBy(
 
 export function buildWhere(
   filters: CardAbilityFilters,
-): Prisma.card_abilityWhereInput {
+): Prisma.CardAbilityWhereInput {
   const { search, lang, codes, is_special } = filters;
 
-  const where: Prisma.card_abilityWhereInput = {};
+  const where: Prisma.CardAbilityWhereInput = {};
 
   if (is_special === true || is_special === false) {
     where.is_special = is_special;

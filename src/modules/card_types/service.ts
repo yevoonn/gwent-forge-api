@@ -17,7 +17,7 @@ export async function findCardTypes({
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
-  const cardTypes = await prisma.card_type.findMany({
+  const cardTypes = await prisma.cardType.findMany({
     where,
     orderBy,
     select: {

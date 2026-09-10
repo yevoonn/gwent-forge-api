@@ -8,7 +8,7 @@ export interface CardTypeFilters {
 
 export function getOrderBy(
   sort: string | undefined,
-): Prisma.card_typeOrderByWithRelationInput {
+): Prisma.CardTypeOrderByWithRelationInput {
   switch (sort) {
     case "id_asc":
       return { id: "asc" };
@@ -29,9 +29,9 @@ export function getOrderBy(
 
 export function buildWhere(
   filters: CardTypeFilters,
-): Prisma.card_typeWhereInput {
+): Prisma.CardTypeWhereInput {
   const { search, lang, codes } = filters;
-  const where: Prisma.card_typeWhereInput = {};
+  const where: Prisma.CardTypeWhereInput = {};
 
   if (search) {
     where.card_type_translation = {

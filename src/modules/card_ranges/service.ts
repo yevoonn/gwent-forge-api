@@ -17,7 +17,7 @@ export async function findCardRanges({
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
-  const cardRanges = await prisma.card_range.findMany({
+  const cardRanges = await prisma.cardRange.findMany({
     where,
     orderBy,
     select: {

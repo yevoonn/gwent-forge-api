@@ -8,7 +8,7 @@ export interface DeckFilters {
 
 export function getOrderBy(
   sort: string | undefined,
-): Prisma.deckOrderByWithRelationInput {
+): Prisma.DeckOrderByWithRelationInput {
   switch (sort) {
     case "id_asc":
       return { id: "asc" };
@@ -27,10 +27,10 @@ export function getOrderBy(
   }
 }
 
-export function buildWhere(filters: DeckFilters): Prisma.deckWhereInput {
+export function buildWhere(filters: DeckFilters): Prisma.DeckWhereInput {
   const { search, lang, codes } = filters;
 
-  const where: Prisma.deckWhereInput = {};
+  const where: Prisma.DeckWhereInput = {};
 
   if (search) {
     where.deck_translation = {

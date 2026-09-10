@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 
-const cardWithRelations = Prisma.validator<Prisma.cardDefaultArgs>()({
+const cardWithRelations = Prisma.validator<Prisma.CardDefaultArgs>()({
   select: {
     code: true,
     power: true,
@@ -52,7 +52,7 @@ const cardWithRelations = Prisma.validator<Prisma.cardDefaultArgs>()({
   },
 });
 
-type CardWithRelations = Prisma.cardGetPayload<typeof cardWithRelations>;
+type CardWithRelations = Prisma.CardGetPayload<typeof cardWithRelations>;
 
 export interface MappedCardAbility {
   code: string;

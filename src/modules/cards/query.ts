@@ -13,7 +13,7 @@ export interface CardFilters {
 
 export function getOrderBy(
   sort: string | undefined,
-): Prisma.cardOrderByWithRelationInput {
+): Prisma.CardOrderByWithRelationInput {
   switch (sort) {
     case "power_asc":
       return { power: "asc" };
@@ -32,11 +32,11 @@ export function getOrderBy(
   }
 }
 
-export function buildWhere(filters: CardFilters): Prisma.cardWhereInput {
+export function buildWhere(filters: CardFilters): Prisma.CardWhereInput {
   const { deck, type, range, abilities, search, lang, is_deck_card, codes } =
     filters;
 
-  const where: Prisma.cardWhereInput = {
+  const where: Prisma.CardWhereInput = {
     is_deck_card: is_deck_card,
   };
 

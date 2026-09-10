@@ -1,17 +1,15 @@
 import { Prisma } from "@prisma/client";
 
-const cardTypeWithTranslation = Prisma.validator<Prisma.card_typeDefaultArgs>()(
-  {
-    select: {
-      code: true,
-      card_type_translation: {
-        select: { name: true },
-      },
+const cardTypeWithTranslation = Prisma.validator<Prisma.CardTypeDefaultArgs>()({
+  select: {
+    code: true,
+    card_type_translation: {
+      select: { name: true },
     },
   },
-);
+});
 
-type CardTypeWithTranslation = Prisma.card_typeGetPayload<
+type CardTypeWithTranslation = Prisma.CardTypeGetPayload<
   typeof cardTypeWithTranslation
 >;
 

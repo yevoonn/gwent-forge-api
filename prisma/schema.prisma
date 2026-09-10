@@ -12,7 +12,7 @@ enum UserRole {
   ADMIN
 }
 
-model card {
+model Card {
   id                        Int                         @id @default(autoincrement())
   deck_id                   Int
   code                      String                      @unique @db.VarChar(255)
@@ -21,189 +21,211 @@ model card {
   range_id                  Int?
   image_url                 String?                     @db.VarChar(255)
   is_deck_card              Boolean                     @default(true)
-  deck                      deck                        @relation(fields: [deck_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_deck")
-  card_range                card_range?                 @relation(fields: [range_id], references: [id], onUpdate: NoAction, map: "fk_card_range")
-  card_type                 card_type                   @relation(fields: [type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type")
-  card_ability_relationship card_ability_relationship[]
-  card_translation          card_translation[]
+  deck                      Deck                        @relation(fields: [deck_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_deck")
+  card_range                CardRange?                  @relation(fields: [range_id], references: [id], onUpdate: NoAction, map: "fk_card_range")
+  card_type                 CardType                    @relation(fields: [type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type")
+  card_ability_relationship CardAbilityRelationship[]
+  card_translation          CardTranslation[]
 
   @@index([deck_id], map: "idx_card_deck_id")
   @@index([range_id], map: "idx_card_range_id")
   @@index([type_id], map: "idx_card_type_id")
+  @@map("card")
 }
 
-model card_ability {
+model CardAbility {
   id                        Int                         @id @default(autoincrement())
   code                      String                      @unique @db.VarChar(255)
   is_special                Boolean                     @default(false)
-  card_ability_relationship card_ability_relationship[]
-  card_ability_translation  card_ability_translation[]
+  card_ability_relationship CardAbilityRelationship[]
+  card_ability_translation  CardAbilityTranslation[]
+
+  @@map("card_ability")
 }
 
-model card_ability_relationship {
+model CardAbilityRelationship {
   card_id         Int
   card_ability_id Int
-  card_ability    card_ability @relation(fields: [card_ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_car_ability")
-  card            card         @relation(fields: [card_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_car_card")
+  card_ability    CardAbility @relation(fields: [card_ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_car_ability")
+  card            Card        @relation(fields: [card_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_car_card")
 
   @@id([card_id, card_ability_id], map: "pk_card_ability_relationship")
   @@index([card_ability_id], map: "idx_card_ability_relationship_card_ability_id")
+  @@map("card_ability_relationship")
 }
 
-model card_ability_translation {
-  id              Int          @id @default(autoincrement())
+model CardAbilityTranslation {
+  id              Int         @id @default(autoincrement())
   language_id     Int
   card_ability_id Int
-  name            String       @db.VarChar(255)
+  name            String      @db.VarChar(255)
   description     String?
-  card_ability    card_ability @relation(fields: [card_ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_ability_translation_ability")
-  language        language     @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_ability_translation_language")
+  card_ability    CardAbility @relation(fields: [card_ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_ability_translation_ability")
+  language        Language    @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_ability_translation_language")
 
   @@unique([card_ability_id, language_id], map: "uq_card_ability_translation")
   @@index([card_ability_id], map: "idx_card_ability_translation_ability_id")
   @@index([language_id], map: "idx_card_ability_translation_language_id")
+  @@map("card_ability_translation")
 }
 
-model card_range {
+model CardRange {
   id                     Int                      @id @default(autoincrement())
   code                   String                   @unique @db.VarChar(255)
-  card                   card[]
-  card_range_translation card_range_translation[]
+  card                   Card[]
+  card_range_translation CardRangeTranslation[]
+
+  @@map("card_range")
 }
 
-model card_range_translation {
-  id            Int        @id @default(autoincrement())
+model CardRangeTranslation {
+  id            Int       @id @default(autoincrement())
   language_id   Int
   card_range_id Int
-  name          String     @db.VarChar(255)
+  name          String    @db.VarChar(255)
   description   String?
-  language      language   @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_range_translation_language")
-  card_range    card_range @relation(fields: [card_range_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_range_translation_range")
+  language      Language  @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_range_translation_language")
+  card_range    CardRange @relation(fields: [card_range_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_range_translation_range")
 
   @@unique([card_range_id, language_id], map: "uq_card_range_translation")
   @@index([language_id], map: "idx_card_range_translation_language_id")
   @@index([card_range_id], map: "idx_card_range_translation_range_id")
+  @@map("card_range_translation")
 }
 
-model card_translation {
+model CardTranslation {
   id          Int      @id @default(autoincrement())
   language_id Int
   card_id     Int
   name        String   @db.VarChar(255)
   description String?
-  card        card     @relation(fields: [card_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_translation_card")
-  language    language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_translation_language")
+  card        Card     @relation(fields: [card_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_translation_card")
+  language    Language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_translation_language")
 
   @@unique([card_id, language_id], map: "uq_card_translation")
   @@index([card_id], map: "idx_card_translation_card_id")
   @@index([language_id], map: "idx_card_translation_language_id")
+  @@map("card_translation")
 }
 
-model card_type {
+model CardType {
   id                    Int                     @id @default(autoincrement())
   code                  String                  @unique @db.VarChar(255)
-  card                  card[]
-  card_type_translation card_type_translation[]
+  card                  Card[]
+  card_type_translation CardTypeTranslation[]
+
+  @@map("card_type")
 }
 
-model card_type_translation {
-  id           Int       @id @default(autoincrement())
+model CardTypeTranslation {
+  id           Int      @id @default(autoincrement())
   language_id  Int
   card_type_id Int
-  name         String    @db.VarChar(255)
+  name         String   @db.VarChar(255)
   description  String?
-  language     language  @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type_translation_language")
-  card_type    card_type @relation(fields: [card_type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type_translation_type")
+  language     Language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type_translation_language")
+  card_type    CardType @relation(fields: [card_type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type_translation_type")
 
   @@unique([card_type_id, language_id], map: "uq_card_type_translation")
   @@index([language_id], map: "idx_card_type_translation_language_id")
   @@index([card_type_id], map: "idx_card_type_translation_type_id")
+  @@map("card_type_translation")
 }
 
-model deck {
+model Deck {
   id               Int                @id @default(autoincrement())
   code             String             @unique @db.VarChar(255)
   game_id          Int
   ability_id       Int?
-  card             card[]
-  deck_ability     deck_ability?      @relation(fields: [ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability")
-  game             game               @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_game")
-  deck_translation deck_translation[]
+  card             Card[]
+  deck_ability     DeckAbility?       @relation(fields: [ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability")
+  game             Game               @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_game")
+  deck_translation DeckTranslation[]
 
   @@index([ability_id], map: "idx_deck_ability_id")
   @@index([game_id], map: "idx_deck_game_id")
+  @@map("deck")
 }
 
-model deck_ability {
+model DeckAbility {
   id                       Int                        @id @default(autoincrement())
   code                     String                     @unique @db.VarChar(255)
-  deck                     deck[]
-  deck_ability_translation deck_ability_translation[]
+  deck                     Deck[]
+  deck_ability_translation DeckAbilityTranslation[]
+
+  @@map("deck_ability")
 }
 
-model deck_ability_translation {
-  id              Int          @id @default(autoincrement())
+model DeckAbilityTranslation {
+  id              Int         @id @default(autoincrement())
   language_id     Int
   deck_ability_id Int
-  name            String       @db.VarChar(255)
+  name            String      @db.VarChar(255)
   description     String?
-  deck_ability    deck_ability @relation(fields: [deck_ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability_translation_ability")
-  language        language     @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability_translation_language")
+  deck_ability    DeckAbility @relation(fields: [deck_ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability_translation_ability")
+  language        Language    @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability_translation_language")
 
   @@unique([deck_ability_id, language_id], map: "uq_deck_ability_translation")
   @@index([deck_ability_id], map: "idx_deck_ability_translation_ability_id")
   @@index([language_id], map: "idx_deck_ability_translation_language_id")
+  @@map("deck_ability_translation")
 }
 
-model deck_translation {
+model DeckTranslation {
   id          Int      @id @default(autoincrement())
   language_id Int
   deck_id     Int
   name        String   @db.VarChar(255)
   description String?
-  deck        deck     @relation(fields: [deck_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_translation_deck")
-  language    language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_translation_language")
+  deck        Deck     @relation(fields: [deck_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_translation_deck")
+  language    Language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_translation_language")
 
   @@unique([deck_id, language_id], map: "uq_deck_translation")
   @@index([deck_id], map: "idx_deck_translation_deck_id")
   @@index([language_id], map: "idx_deck_translation_language_id")
+  @@map("deck_translation")
 }
 
-model game {
+model Game {
   id               Int                @id @default(autoincrement())
   code             String             @unique @db.VarChar(255)
-  deck             deck[]
-  game_translation game_translation[]
+  deck             Deck[]
+  game_translation GameTranslation[]
+
+  @@map("game")
 }
 
-model game_translation {
+model GameTranslation {
   id          Int      @id @default(autoincrement())
   language_id Int
   game_id     Int
   name        String   @db.VarChar(255)
   description String?
-  game        game     @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_game_translation_game")
-  language    language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_game_translation_language")
+  game        Game     @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_game_translation_game")
+  language    Language @relation(fields: [language_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_game_translation_language")
 
   @@unique([game_id, language_id], map: "uq_game_translation")
   @@index([game_id], map: "idx_game_translation_game_id")
   @@index([language_id], map: "idx_game_translation_language_id")
+  @@map("game_translation")
 }
 
-model language {
+model Language {
   id                       Int                        @id @default(autoincrement())
   code                     String                     @unique @db.VarChar(5)
   name                     String                     @db.VarChar(50)
-  card_ability_translation card_ability_translation[]
-  card_range_translation   card_range_translation[]
-  card_translation         card_translation[]
-  card_type_translation    card_type_translation[]
-  deck_ability_translation deck_ability_translation[]
-  deck_translation         deck_translation[]
-  game_translation         game_translation[]
+  card_ability_translation CardAbilityTranslation[]
+  card_range_translation   CardRangeTranslation[]
+  card_translation         CardTranslation[]
+  card_type_translation    CardTypeTranslation[]
+  deck_ability_translation DeckAbilityTranslation[]
+  deck_translation         DeckTranslation[]
+  game_translation         GameTranslation[]
+
+  @@map("language")
 }
 
-model user {
+model User {
   id                Int       @id @default(autoincrement())
   email             String    @unique @db.VarChar(255)
   username          String    @unique @db.VarChar(50)
@@ -213,12 +235,12 @@ model user {
   createdAt         DateTime  @default(now()) @map("created_at")
   updatedAt         DateTime  @updatedAt @map("updated_at")
 
-  sessions          user_session[]
+  sessions          UserSession[]
 
   @@map("user")
 }
 
-model user_session {
+model UserSession {
   id        Int       @id @default(autoincrement())
   userId    Int       @map("user_id")
   tokenHash String    @map("token_hash")
@@ -227,7 +249,7 @@ model user_session {
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime  @updatedAt @map("updated_at")
 
-  user      user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@map("user_session")

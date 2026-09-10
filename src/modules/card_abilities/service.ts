@@ -17,7 +17,7 @@ export async function findCardAbilities({
   const where = buildWhere(filters);
   const orderBy = getOrderBy(sort);
 
-  const cardAbilities = await prisma.card_ability.findMany({
+  const cardAbilities = await prisma.cardAbility.findMany({
     where,
     orderBy,
     select: {

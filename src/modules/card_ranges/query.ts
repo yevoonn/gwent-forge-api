@@ -8,7 +8,7 @@ export interface CardRangeFilters {
 
 export function getOrderBy(
   sort: string | undefined,
-): Prisma.card_rangeOrderByWithRelationInput {
+): Prisma.CardRangeOrderByWithRelationInput {
   switch (sort) {
     case "id_asc":
       return { id: "asc" };
@@ -29,9 +29,9 @@ export function getOrderBy(
 
 export function buildWhere(
   filters: CardRangeFilters,
-): Prisma.card_rangeWhereInput {
+): Prisma.CardRangeWhereInput {
   const { search, lang, codes } = filters;
-  const where: Prisma.card_rangeWhereInput = {};
+  const where: Prisma.CardRangeWhereInput = {};
 
   if (search) {
     where.card_range_translation = {

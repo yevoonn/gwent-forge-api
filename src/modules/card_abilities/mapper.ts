@@ -1,7 +1,7 @@
 import { Prisma } from "@prisma/client";
 
 const cardAbilityWithTranslation =
-  Prisma.validator<Prisma.card_abilityDefaultArgs>()({
+  Prisma.validator<Prisma.CardAbilityDefaultArgs>()({
     select: {
       code: true,
       card_ability_translation: {
@@ -10,7 +10,7 @@ const cardAbilityWithTranslation =
     },
   });
 
-type CardAbilityWithTranslation = Prisma.card_abilityGetPayload<
+type CardAbilityWithTranslation = Prisma.CardAbilityGetPayload<
   typeof cardAbilityWithTranslation
 >;
 

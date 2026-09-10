@@ -20,7 +20,7 @@ import type {
   UpdateProfileInput,
   ChangePasswordInput,
 } from "./validationSchemas.js";
-import type { user as User } from "@prisma/client";
+import type { User } from "@prisma/client";
 
 interface PublicUser {
   id: number;
@@ -186,7 +186,7 @@ export async function login({ email, password }: LoginInput) {
     Date.now() + parseJWTDuration(env.JWT_REFRESH_EXPIRES_IN),
   );
 
-  await prisma.user_session.create({
+  await prisma.userSession.create({
     data: {
       userId: user.id,
       tokenHash: hashToken(refreshToken),
@@ -220,11 +220,11 @@ async function rotateRefreshToken(
   // 1. revoke the current session,
   // 2. create a new session for the new refresh token.
   await prisma.$transaction([
-    prisma.user_session.update({
+    prisma.userSession.update({
       where: { id: sessionId },
       data: { revokedAt: new Date() },
     }),
-    prisma.user_session.create({
+    prisma.userSession.create({
       data: {
         userId,
         tokenHash: hashToken(newRefreshToken),
@@ -241,7 +241,7 @@ export async function revokeRefreshToken(refreshToken: string): Promise<void> {
 
   // Revoke the active session associated with this refresh token.
   // The refresh token itself is never stored in the database.
-  await prisma.user_session.updateMany({
+  await prisma.userSession.updateMany({
     where: { tokenHash, revokedAt: null },
     data: { revokedAt: new Date() },
   });
@@ -262,7 +262,7 @@ export async function refresh(refreshToken: string) {
   const tokenHash = hashToken(refreshToken);
 
   // Find the active user session corresponding to this refresh token.
-  const session = await prisma.user_session.findFirst({
+  const session = await prisma.userSession.findFirst({
     where: {
       tokenHash,
       userId,
@@ -325,7 +325,7 @@ export async function changePassword(
       where: { id: userId },
       data: { passwordHash },
     }),
-    prisma.user_session.updateMany({
+    prisma.userSession.updateMany({
       where: { userId, revokedAt: null },
       data: { revokedAt: new Date() },
     }),

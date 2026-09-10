@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 
-const deckWithTranslation = Prisma.validator<Prisma.deckDefaultArgs>()({
+const deckWithTranslation = Prisma.validator<Prisma.DeckDefaultArgs>()({
   select: {
     code: true,
     deck_translation: {
@@ -9,7 +9,7 @@ const deckWithTranslation = Prisma.validator<Prisma.deckDefaultArgs>()({
   },
 });
 
-type DeckWithTranslation = Prisma.deckGetPayload<typeof deckWithTranslation>;
+type DeckWithTranslation = Prisma.DeckGetPayload<typeof deckWithTranslation>;
 
 export interface MappedDeck {
   code: string;

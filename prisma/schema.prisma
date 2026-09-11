@@ -26,6 +26,7 @@ model Card {
   card_type                 CardType                    @relation(fields: [type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type")
   card_ability_relationship CardAbilityRelationship[]
   card_translation          CardTranslation[]
+  user_deck_card            UserDeckCard[]
 
   @@index([deck_id], map: "idx_card_deck_id")
   @@index([range_id], map: "idx_card_range_id")
@@ -141,6 +142,7 @@ model Deck {
   deck_ability     DeckAbility?       @relation(fields: [ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability")
   game             Game               @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_game")
   deck_translation DeckTranslation[]
+  user_deck        UserDeck[]
 
   @@index([ability_id], map: "idx_deck_ability_id")
   @@index([game_id], map: "idx_deck_game_id")
@@ -221,6 +223,7 @@ model Language {
   deck_ability_translation DeckAbilityTranslation[]
   deck_translation         DeckTranslation[]
   game_translation         GameTranslation[]
+  user_deck_translation    UserDeckTranslation[]
 
   @@map("language")
 }
@@ -236,6 +239,7 @@ model User {
   updatedAt         DateTime  @updatedAt @map("updated_at")
 
   sessions          UserSession[]
+  user_deck         UserDeck[]
 
   @@map("user")
 }
@@ -253,4 +257,49 @@ model UserSession {
 
   @@index([userId])
   @@map("user_session")
+}
+
+model UserDeck {
+  id                    Int                    @id @default(autoincrement())
+  userId                Int                    @map("user_id")
+  deckId                Int                    @map("deck_id")
+  createdAt             DateTime               @default(now()) @map("created_at")
+  updatedAt             DateTime               @updatedAt @map("updated_at")
+
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade, map: "fk_user_deck_user")
+  deck                  Deck                   @relation(fields: [deckId], references: [id], onDelete: Cascade, map: "fk_user_deck_deck")
+  user_deck_translation UserDeckTranslation[]
+  user_deck_card        UserDeckCard[]
+
+  @@index([userId], map: "idx_user_deck_user_id")
+  @@index([deckId], map: "idx_user_deck_deck_id")
+  @@map("user_deck")
+}
+
+model UserDeckTranslation {
+  id          Int      @id @default(autoincrement())
+  userDeckId  Int      @map("user_deck_id")
+  languageId  Int      @map("language_id")
+  name        String   @db.VarChar(255)
+  description String?
+
+  user_deck   UserDeck @relation(fields: [userDeckId], references: [id], onDelete: Cascade, map: "fk_user_deck_translation_deck")
+  language    Language @relation(fields: [languageId], references: [id], onDelete: Cascade, map: "fk_user_deck_translation_language")
+
+  @@unique([userDeckId, languageId], map: "uq_user_deck_translation")
+  @@index([userDeckId], map: "idx_user_deck_translation_deck_id")
+  @@index([languageId], map: "idx_user_deck_translation_language_id")
+  @@map("user_deck_translation")
+}
+
+model UserDeckCard {
+  userDeckId Int      @map("user_deck_id")
+  cardId     Int      @map("card_id")
+
+  user_deck  UserDeck @relation(fields: [userDeckId], references: [id], onDelete: Cascade, map: "fk_user_deck_card_deck")
+  card       Card     @relation(fields: [cardId], references: [id], onDelete: Cascade, map: "fk_user_deck_card_card")
+
+  @@id([userDeckId, cardId], map: "pk_user_deck_card")
+  @@index([cardId], map: "idx_user_deck_card_card_id")
+  @@map("user_deck_card")
 }

@@ -26,7 +26,7 @@ export interface MappedUserDeckListItem {
   updatedAt: Date;
 }
 
-export function mapUSerDeckListItem(
+export function mapUserDeckListItems(
   userDecks: UserDeckListItem[],
 ): MappedUserDeckListItem[] {
   return userDecks.map((userDeck) => ({

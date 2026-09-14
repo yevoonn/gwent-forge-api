@@ -5,6 +5,7 @@ import decksRoutes from "../modules/decks/routes.js";
 import cardAbilitiesRoutes from "../modules/card_abilities/routes.js";
 import cardRangesRoutes from "../modules/card_ranges/routes.js";
 import cardTypesRoutes from "../modules/card_types/routes.js";
+import userDecksRoutes from "../modules/user_decks/routes.js";
 
 const router = Router();
 
@@ -16,5 +17,6 @@ router.use("/decks", decksRoutes);
 router.use("/card-abilities", cardAbilitiesRoutes);
 router.use("/card-ranges", cardRangesRoutes);
 router.use("/card-types", cardTypesRoutes);
+router.use("/user-decks", userDecksRoutes);
 
 export default router;

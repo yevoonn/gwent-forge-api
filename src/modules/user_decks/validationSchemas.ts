@@ -1,5 +1,13 @@
 import { z } from "zod";
 
+const cardCodesSchema = z
+  .array(z.string().trim().min(1))
+  .min(1, "A deck must contain at least one card")
+  .max(200, "Too many cards in a single deck")
+  .refine((codes) => new Set(codes).size === codes.length, {
+    message: "Duplicate card codes are not allowed",
+  });
+
 /**
  * Schema used when creating a new user deck.
  * The name/description are provided once and copied to every
@@ -17,10 +25,7 @@ export const createUserDeckSchema = z.object({
     .trim()
     .max(2000, "Description is too long")
     .optional(),
-  cardCodes: z
-    .array(z.string().trim().min(1))
-    .min(1, "A deck must contain at least one card")
-    .max(200, "Too many cards in a single deck"),
+  cardCodes: cardCodesSchema,
 });
 
 /**
@@ -42,11 +47,7 @@ export const updateUserDeckSchema = z
       .trim()
       .max(2000, "Description is too long")
       .optional(),
-    cardCodes: z
-      .array(z.string().trim().min(1))
-      .min(1, "A deck must contain at least one card")
-      .max(200, "Too many cards in a single deck")
-      .optional(),
+    cardCodes: cardCodesSchema.optional(),
   })
   .refine((data) => !(data.name !== undefined && !data.lang), {
     message: "lang is required when updating name",

@@ -15,6 +15,48 @@ import type {
 } from "./validationSchemas.js";
 
 /**
+ * Ensures the given language actually exists, so callers get a precise error.
+ */
+async function ensureLanguageExists(languageCode: string): Promise<void> {
+  const language = await prisma.language.findUnique({
+    where: { code: languageCode },
+    select: { id: true },
+  });
+
+  if (!language) {
+    throw new ValidationError([
+      {
+        field: "lang",
+        code: "LANGUAGE_NOT_FOUND",
+        message: `Language with code '${languageCode}' does not exist`,
+      },
+    ]);
+  }
+}
+
+/**
+ * Ensures the given game deck (the card pool a user deck is built from)
+ * actually exists, so callers get a precise error instead of an empty
+ * "no cards matched" result from a later query.
+ */
+async function ensureDeckExists(deckId: number): Promise<void> {
+  const deck = await prisma.deck.findUnique({
+    where: { id: deckId },
+    select: { id: true },
+  });
+
+  if (!deck) {
+    throw new ValidationError([
+      {
+        field: "deckId",
+        code: "DECK_NOT_FOUND",
+        message: `Deck with id ${deckId} does not exist`,
+      },
+    ]);
+  }
+}
+
+/**
  * Ensures every given card code belongs to the card pool of the given
  * game deck. Throws a ValidationError listing every code that doesn't,
  * so the client can point out exactly which selections were invalid.
@@ -40,7 +82,7 @@ async function ensureCardsBelongToDeck(
     const errorDetails: ValidationErrorDetail[] = invalidCodes.map((code) => ({
       field: "cardCodes",
       code: "CARD_NOT_IN_DECK_POOL",
-      message: `Card "${code}" does not belong to the selected deck`,
+      message: `Card '${code}' does not belong to the selected deck`,
     }));
 
     throw new ValidationError(errorDetails);
@@ -74,6 +116,8 @@ export async function createUserDeck(
   userId: number,
   { deckId, name, description, cardCodes }: CreateUserDeckInput,
 ): Promise<MappedUserDeckDetail> {
+  await ensureDeckExists(deckId);
+
   const cardIdByCode = await ensureCardsBelongToDeck(deckId, cardCodes);
   const languages = await prisma.language.findMany({ select: { id: true } });
 
@@ -139,6 +183,8 @@ export async function findUserDeckById(
   userId: number,
   lang: string,
 ): Promise<MappedUserDeckDetail> {
+  await ensureLanguageExists(lang);
+
   const ownedUserDeck = await findOwnedUserDeck(userDeckId, userId);
 
   if (!ownedUserDeck) {
@@ -171,6 +217,10 @@ export async function updateUserDeck(
   userId: number,
   { lang, name, description, cardCodes }: UpdateUserDeckInput,
 ): Promise<MappedUserDeckDetail> {
+  if (lang) {
+    await ensureLanguageExists(lang);
+  }
+
   const ownedUserDeck = await findOwnedUserDeck(userDeckId, userId);
 
   if (!ownedUserDeck) {

@@ -82,6 +82,12 @@ export async function login(req: Request, res: Response): Promise<void> {
   });
 }
 
+export async function verifyEmail(req: Request, res: Response): Promise<void> {
+  const user = await authService.verifyEmail(req.body);
+
+  res.status(200).json({ user });
+}
+
 export async function logout(req: Request, res: Response): Promise<void> {
   const refreshToken = req.cookies[REFRESH_TOKEN_COOKIE];
 

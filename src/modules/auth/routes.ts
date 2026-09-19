@@ -8,6 +8,7 @@ import {
   registerSchema,
   updateProfileSchema,
   changePasswordSchema,
+  verifyEmailSchema,
 } from "./validationSchemas.js";
 
 const router = Router();
@@ -16,6 +17,11 @@ const router = Router();
 router.post("/health", validate(registerSchema), authController.health);
 router.post("/register", validate(registerSchema), authController.register);
 router.post("/login", validate(loginSchema), authController.login);
+router.post(
+  "/verify-email",
+  validate(verifyEmailSchema),
+  authController.verifyEmail as RequestHandler,
+);
 router.post("/logout", authController.logout);
 router.post("/refresh", authController.refresh);
 

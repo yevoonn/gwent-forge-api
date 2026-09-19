@@ -40,6 +40,14 @@ export const loginSchema = z.object({
 });
 
 /**
+ * Schema used when verifying a user's email address.
+ * The token is trimmed before it is passed to the verification service.
+ */
+export const verifyEmailSchema = z.object({
+  token: z.string().trim().min(1),
+});
+
+/**
  * Schema used when updating the authenticated user's profile.
  * Currently, only the username can be changed.
  */
@@ -67,5 +75,6 @@ export const changePasswordSchema = z.object({
 
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
+export type VerifyEmailInput = z.infer<typeof verifyEmailSchema>;
 export type UpdateProfileInput = z.infer<typeof updateProfileSchema>;
 export type ChangePasswordInput = z.infer<typeof changePasswordSchema>;

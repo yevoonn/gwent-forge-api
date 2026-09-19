@@ -18,6 +18,7 @@ import { env } from "../../config/env.js";
 import type {
   RegisterInput,
   LoginInput,
+  VerifyEmailInput,
   UpdateProfileInput,
   ChangePasswordInput,
 } from "./validationSchemas.js";
@@ -216,6 +217,56 @@ export async function login({ email, password }: LoginInput) {
   };
 }
 
+export async function verifyEmail({
+  token,
+}: VerifyEmailInput): Promise<PublicUser> {
+  // Hash the raw token to match the value stored in the database.
+  const tokenHash = hashToken(token);
+
+  const verificationToken = await prisma.emailVerificationToken.findUnique({
+    where: { tokenHash },
+    include: { user: true },
+  });
+
+  if (!verificationToken) {
+    throw new AuthenticationError(
+      "INVALID_EMAIL_VERIFICATION_TOKEN",
+      "Invalid email verification token.",
+    );
+  }
+
+  // Prevent reuse of an already consumed token.
+  if (verificationToken.usedAt) {
+    throw new AuthenticationError(
+      "EMAIL_VERIFICATION_TOKEN_USED",
+      "Email verification token has already been used.",
+    );
+  }
+
+  // Reject tokens that are no longer valid.
+  if (verificationToken.expiresAt <= new Date()) {
+    throw new AuthenticationError(
+      "EMAIL_VERIFICATION_TOKEN_EXPIRED",
+      "Email verification token has expired.",
+    );
+  }
+
+  // Mark the token as used and verify the user's email.
+  const user = await prisma.$transaction(async (tx) => {
+    await tx.emailVerificationToken.update({
+      where: { id: verificationToken.id },
+      data: { usedAt: new Date() },
+    });
+
+    return tx.user.update({
+      where: { id: verificationToken.userId },
+      data: { isEmailVerified: true },
+    });
+  });
+
+  return getPublicUser(user);
+}
+
 const getInvalidRefreshTokenError = (): AuthenticationError =>
   new AuthenticationError("INVALID_REFRESH_TOKEN", "Invalid refresh token");
 
@@ -231,7 +282,7 @@ async function rotateRefreshToken(
     Date.now() + parseJWTDuration(env.JWT_REFRESH_EXPIRES_IN),
   );
 
-  // Rotate the refresh token atomically:
+  // Rotate the refresh token:
   // 1. revoke the current session,
   // 2. create a new session for the new refresh token.
   await prisma.$transaction([
@@ -298,7 +349,7 @@ export async function refresh(refreshToken: string) {
   }
 
   // Rotate the refresh token by revoking the current session
-  // and creating a new session atomically.
+  // and creating a new session.
   const newRefreshToken = await rotateRefreshToken(session.id, userId);
 
   // Issue a new short-lived access token for the user.

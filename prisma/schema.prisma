@@ -13,17 +13,17 @@ enum UserRole {
 }
 
 model Card {
-  id                        Int                         @id @default(autoincrement())
+  id                        Int                       @id @default(autoincrement())
   deck_id                   Int
-  code                      String                      @unique @db.VarChar(255)
+  code                      String                    @unique @db.VarChar(255)
   power                     Int?
   type_id                   Int
   range_id                  Int?
-  image_url                 String?                     @db.VarChar(255)
-  is_deck_card              Boolean                     @default(true)
-  deck                      Deck                        @relation(fields: [deck_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_deck")
-  card_range                CardRange?                  @relation(fields: [range_id], references: [id], onUpdate: NoAction, map: "fk_card_range")
-  card_type                 CardType                    @relation(fields: [type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type")
+  image_url                 String?                   @db.VarChar(255)
+  is_deck_card              Boolean                   @default(true)
+  deck                      Deck                      @relation(fields: [deck_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_deck")
+  card_range                CardRange?                @relation(fields: [range_id], references: [id], onUpdate: NoAction, map: "fk_card_range")
+  card_type                 CardType                  @relation(fields: [type_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_card_type")
   card_ability_relationship CardAbilityRelationship[]
   card_translation          CardTranslation[]
   user_deck_card            UserDeckCard[]
@@ -35,9 +35,9 @@ model Card {
 }
 
 model CardAbility {
-  id                        Int                         @id @default(autoincrement())
-  code                      String                      @unique @db.VarChar(255)
-  is_special                Boolean                     @default(false)
+  id                        Int                       @id @default(autoincrement())
+  code                      String                    @unique @db.VarChar(255)
+  is_special                Boolean                   @default(false)
   card_ability_relationship CardAbilityRelationship[]
   card_ability_translation  CardAbilityTranslation[]
 
@@ -71,8 +71,8 @@ model CardAbilityTranslation {
 }
 
 model CardRange {
-  id                     Int                      @id @default(autoincrement())
-  code                   String                   @unique @db.VarChar(255)
+  id                     Int                    @id @default(autoincrement())
+  code                   String                 @unique @db.VarChar(255)
   card                   Card[]
   card_range_translation CardRangeTranslation[]
 
@@ -110,8 +110,8 @@ model CardTranslation {
 }
 
 model CardType {
-  id                    Int                     @id @default(autoincrement())
-  code                  String                  @unique @db.VarChar(255)
+  id                    Int                   @id @default(autoincrement())
+  code                  String                @unique @db.VarChar(255)
   card                  Card[]
   card_type_translation CardTypeTranslation[]
 
@@ -134,13 +134,13 @@ model CardTypeTranslation {
 }
 
 model Deck {
-  id               Int                @id @default(autoincrement())
-  code             String             @unique @db.VarChar(255)
+  id               Int               @id @default(autoincrement())
+  code             String            @unique @db.VarChar(255)
   game_id          Int
   ability_id       Int?
   card             Card[]
-  deck_ability     DeckAbility?       @relation(fields: [ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability")
-  game             Game               @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_game")
+  deck_ability     DeckAbility?      @relation(fields: [ability_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_ability")
+  game             Game              @relation(fields: [game_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_deck_game")
   deck_translation DeckTranslation[]
   user_deck        UserDeck[]
 
@@ -150,8 +150,8 @@ model Deck {
 }
 
 model DeckAbility {
-  id                       Int                        @id @default(autoincrement())
-  code                     String                     @unique @db.VarChar(255)
+  id                       Int                      @id @default(autoincrement())
+  code                     String                   @unique @db.VarChar(255)
   deck                     Deck[]
   deck_ability_translation DeckAbilityTranslation[]
 
@@ -189,8 +189,8 @@ model DeckTranslation {
 }
 
 model Game {
-  id               Int                @id @default(autoincrement())
-  code             String             @unique @db.VarChar(255)
+  id               Int               @id @default(autoincrement())
+  code             String            @unique @db.VarChar(255)
   deck             Deck[]
   game_translation GameTranslation[]
 
@@ -213,9 +213,9 @@ model GameTranslation {
 }
 
 model Language {
-  id                       Int                        @id @default(autoincrement())
-  code                     String                     @unique @db.VarChar(5)
-  name                     String                     @db.VarChar(50)
+  id                       Int                      @id @default(autoincrement())
+  code                     String                   @unique @db.VarChar(5)
+  name                     String                   @db.VarChar(50)
   card_ability_translation CardAbilityTranslation[]
   card_range_translation   CardRangeTranslation[]
   card_translation         CardTranslation[]
@@ -229,17 +229,18 @@ model Language {
 }
 
 model User {
-  id                Int       @id @default(autoincrement())
-  email             String    @unique @db.VarChar(255)
-  username          String    @unique @db.VarChar(50)
-  passwordHash      String    @map("password_hash") @db.VarChar(255)
-  role              UserRole  @default(USER)
-  isEmailVerified   Boolean   @default(false) @map("is_email_verified")
-  createdAt         DateTime  @default(now()) @map("created_at")
-  updatedAt         DateTime  @updatedAt @map("updated_at")
+  id              Int      @id @default(autoincrement())
+  email           String   @unique @db.VarChar(255)
+  username        String   @unique @db.VarChar(50)
+  passwordHash    String   @map("password_hash") @db.VarChar(255)
+  role            UserRole @default(USER)
+  isEmailVerified Boolean  @default(false) @map("is_email_verified")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
 
-  sessions          UserSession[]
-  user_deck         UserDeck[]
+  sessions                UserSession[]
+  emailVerificationTokens EmailVerificationToken[]
+  user_deck               UserDeck[]
 
   @@map("user")
 }
@@ -253,21 +254,21 @@ model UserSession {
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime  @updatedAt @map("updated_at")
 
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@map("user_session")
 }
 
 model UserDeck {
-  id                    Int                    @id @default(autoincrement())
-  userId                Int                    @map("user_id")
-  deckId                Int                    @map("deck_id")
-  createdAt             DateTime               @default(now()) @map("created_at")
-  updatedAt             DateTime               @updatedAt @map("updated_at")
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  deckId    Int      @map("deck_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
-  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade, map: "fk_user_deck_user")
-  deck                  Deck                   @relation(fields: [deckId], references: [id], onDelete: Cascade, map: "fk_user_deck_deck")
+  user                  User                  @relation(fields: [userId], references: [id], onDelete: Cascade, map: "fk_user_deck_user")
+  deck                  Deck                  @relation(fields: [deckId], references: [id], onDelete: Cascade, map: "fk_user_deck_deck")
   user_deck_translation UserDeckTranslation[]
   user_deck_card        UserDeckCard[]
 
@@ -277,14 +278,14 @@ model UserDeck {
 }
 
 model UserDeckTranslation {
-  id          Int      @id @default(autoincrement())
-  userDeckId  Int      @map("user_deck_id")
-  languageId  Int      @map("language_id")
-  name        String   @db.VarChar(255)
+  id          Int     @id @default(autoincrement())
+  userDeckId  Int     @map("user_deck_id")
+  languageId  Int     @map("language_id")
+  name        String  @db.VarChar(255)
   description String?
 
-  user_deck   UserDeck @relation(fields: [userDeckId], references: [id], onDelete: Cascade, map: "fk_user_deck_translation_deck")
-  language    Language @relation(fields: [languageId], references: [id], onDelete: Cascade, map: "fk_user_deck_translation_language")
+  user_deck UserDeck @relation(fields: [userDeckId], references: [id], onDelete: Cascade, map: "fk_user_deck_translation_deck")
+  language  Language @relation(fields: [languageId], references: [id], onDelete: Cascade, map: "fk_user_deck_translation_language")
 
   @@unique([userDeckId, languageId], map: "uq_user_deck_translation")
   @@index([userDeckId], map: "idx_user_deck_translation_deck_id")
@@ -293,13 +294,27 @@ model UserDeckTranslation {
 }
 
 model UserDeckCard {
-  userDeckId Int      @map("user_deck_id")
-  cardId     Int      @map("card_id")
+  userDeckId Int @map("user_deck_id")
+  cardId     Int @map("card_id")
 
-  user_deck  UserDeck @relation(fields: [userDeckId], references: [id], onDelete: Cascade, map: "fk_user_deck_card_deck")
-  card       Card     @relation(fields: [cardId], references: [id], onDelete: Cascade, map: "fk_user_deck_card_card")
+  user_deck UserDeck @relation(fields: [userDeckId], references: [id], onDelete: Cascade, map: "fk_user_deck_card_deck")
+  card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade, map: "fk_user_deck_card_card")
 
   @@id([userDeckId, cardId], map: "pk_user_deck_card")
   @@index([cardId], map: "idx_user_deck_card_card_id")
   @@map("user_deck_card")
+}
+
+model EmailVerificationToken {
+  id        Int       @id @default(autoincrement())
+  userId    Int       @map("user_id")
+  tokenHash String    @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("email_verification_token")
 }

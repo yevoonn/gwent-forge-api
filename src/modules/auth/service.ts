@@ -105,25 +105,6 @@ export async function updateProfile(
   }
 }
 
-async function createEmailVerificationToken(userId: number): Promise<string> {
-  const token = generateEmailVerificationToken();
-  const tokenHash = hashToken(token);
-
-  const expiresAt = new Date(
-    Date.now() + parseJWTDuration(env.EMAIL_VERIFICATION_TOKEN_EXPIRES_IN),
-  );
-
-  await prisma.emailVerificationToken.create({
-    data: {
-      userId,
-      tokenHash,
-      expiresAt,
-    },
-  });
-
-  return token;
-}
-
 export async function register({
   email,
   username,
@@ -165,11 +146,23 @@ export async function register({
   const passwordHash = await hashPassword(password);
 
   try {
-    const user = await prisma.user.create({
-      data: { email, username, passwordHash },
-    });
+    const user = await prisma.$transaction(async (tx) => {
+      const user = await tx.user.create({
+        data: { email, username, passwordHash },
+      });
 
-    await createEmailVerificationToken(user.id);
+      const token = generateEmailVerificationToken();
+      const tokenHash = hashToken(token);
+      const expiresAt = new Date(
+        Date.now() + parseJWTDuration(env.EMAIL_VERIFICATION_TOKEN_EXPIRES_IN),
+      );
+
+      await tx.emailVerificationToken.create({
+        data: { userId: user.id, tokenHash, expiresAt },
+      });
+
+      return user;
+    });
 
     // Never return the password hash to the client.
     return getPublicUser(user);

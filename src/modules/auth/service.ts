@@ -8,6 +8,7 @@ import { hashPassword, verifyPassword } from "../../utils/password.js";
 import { mapPrismaError } from "../../utils/mapPrismaError.js";
 import { hashToken } from "../../utils/tokenHash.js";
 import { generateEmailVerificationToken } from "../../utils/emailVerificationToken.js";
+import { sendVerificationEmail } from "../../services/email/index.js";
 import {
   generateAccessToken,
   generateRefreshToken,
@@ -147,22 +148,30 @@ export async function register({
   const passwordHash = await hashPassword(password);
 
   try {
-    const user = await prisma.$transaction(async (tx) => {
-      const user = await tx.user.create({
-        data: { email, username, passwordHash },
-      });
+    const { user, verificationToken } = await prisma.$transaction(
+      async (tx) => {
+        const user = await tx.user.create({
+          data: { email, username, passwordHash },
+        });
 
-      const token = generateEmailVerificationToken();
-      const tokenHash = hashToken(token);
-      const expiresAt = new Date(
-        Date.now() + parseJWTDuration(env.EMAIL_VERIFICATION_TOKEN_EXPIRES_IN),
-      );
+        const verificationToken = generateEmailVerificationToken();
+        const tokenHash = hashToken(verificationToken);
+        const expiresAt = new Date(
+          Date.now() +
+            parseJWTDuration(env.EMAIL_VERIFICATION_TOKEN_EXPIRES_IN),
+        );
 
-      await tx.emailVerificationToken.create({
-        data: { userId: user.id, tokenHash, expiresAt },
-      });
+        await tx.emailVerificationToken.create({
+          data: { userId: user.id, tokenHash, expiresAt },
+        });
 
-      return user;
+        return { user, verificationToken };
+      },
+    );
+
+    await sendVerificationEmail({
+      email: user.email,
+      token: verificationToken,
     });
 
     // Never return the password hash to the client.

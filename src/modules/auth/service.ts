@@ -202,6 +202,13 @@ export async function login({ email, password }: LoginInput) {
     throw new AuthenticationError();
   }
 
+  if (!user.isEmailVerified) {
+    throw new AuthenticationError(
+      "EMAIL_NOT_VERIFIED",
+      "Email address has not been verified.",
+    );
+  }
+
   // The access token is short-lived and used to authorize API requests.
   // The refresh token is long-lived and used only to obtain a new access token.
   const accessToken = generateAccessToken(user);

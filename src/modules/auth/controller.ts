@@ -63,6 +63,15 @@ export async function register(req: Request, res: Response): Promise<void> {
   res.status(201).json(user);
 }
 
+export async function resendVerification(
+  req: Request,
+  res: Response,
+): Promise<void> {
+  await authService.resendVerification(req.body);
+
+  res.status(204).send();
+}
+
 export async function login(req: Request, res: Response): Promise<void> {
   const result = await authService.login(req.body);
 

@@ -9,20 +9,32 @@ import {
   updateProfileSchema,
   changePasswordSchema,
   verifyEmailSchema,
+  resendVerificationSchema,
 } from "./validationSchemas.js";
 
 const router = Router();
 
 // Development/test endpoint used to verify the validation and error-handling flow.
 router.post("/health", validate(registerSchema), authController.health);
+
 router.post("/register", validate(registerSchema), authController.register);
+
+router.post(
+  "/resend-verification",
+  validate(resendVerificationSchema),
+  authController.resendVerification as RequestHandler,
+);
+
 router.post("/login", validate(loginSchema), authController.login);
+
 router.post(
   "/verify-email",
   validate(verifyEmailSchema),
   authController.verifyEmail as RequestHandler,
 );
+
 router.post("/logout", authController.logout);
+
 router.post("/refresh", authController.refresh);
 
 // Protected endpoint:

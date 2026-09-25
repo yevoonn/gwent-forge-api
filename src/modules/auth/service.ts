@@ -20,6 +20,7 @@ import type {
   RegisterInput,
   LoginInput,
   VerifyEmailInput,
+  ResendVerificationInput,
   UpdateProfileInput,
   ChangePasswordInput,
 } from "./validationSchemas.js";
@@ -185,6 +186,39 @@ export async function register({
 
     throw error;
   }
+}
+
+export async function resendVerification({
+  email,
+}: ResendVerificationInput): Promise<void> {
+  const user = await prisma.user.findUnique({ where: { email } });
+
+  // Do not reveal whether the email belongs to an existing account.
+  if (!user || user.isEmailVerified) {
+    return;
+  }
+
+  const { verificationToken } = await prisma.$transaction(async (tx) => {
+    // Invalidate all previous unused verification tokens
+    await tx.emailVerificationToken.updateMany({
+      where: { userId: user.id, usedAt: null },
+      data: { usedAt: new Date() },
+    });
+
+    const verificationToken = generateEmailVerificationToken();
+    const tokenHash = hashToken(verificationToken);
+    const expiresAt = new Date(
+      Date.now() + parseJWTDuration(env.EMAIL_VERIFICATION_TOKEN_EXPIRES_IN),
+    );
+
+    await tx.emailVerificationToken.create({
+      data: { userId: user.id, tokenHash, expiresAt },
+    });
+
+    return { verificationToken };
+  });
+
+  await sendVerificationEmail({ email: user.email, token: verificationToken });
 }
 
 export async function login({ email, password }: LoginInput) {

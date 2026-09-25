@@ -23,6 +23,18 @@ export const registerSchema = z.object({
 });
 
 /**
+ * Schema used when requesting a new email verification token.
+ * The email is normalized in the same way as during login and registration.
+ */
+export const resendVerificationSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email address")
+    .toLowerCase(),
+});
+
+/**
  * Login accepts only the credentials required for authentication.
  * The same email normalization rules are used as during registration
  * so that email lookup is consistent.
@@ -74,6 +86,7 @@ export const changePasswordSchema = z.object({
 });
 
 export type RegisterInput = z.infer<typeof registerSchema>;
+export type ResendVerificationInput = z.infer<typeof resendVerificationSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type VerifyEmailInput = z.infer<typeof verifyEmailSchema>;
 export type UpdateProfileInput = z.infer<typeof updateProfileSchema>;

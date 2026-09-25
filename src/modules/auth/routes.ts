@@ -20,7 +20,7 @@ router.post("/health", validate(registerSchema), authController.health);
 router.post("/register", validate(registerSchema), authController.register);
 
 router.post(
-  "/resend-verification",
+  "/resend-verification-email",
   validate(resendVerificationSchema),
   authController.resendVerification as RequestHandler,
 );

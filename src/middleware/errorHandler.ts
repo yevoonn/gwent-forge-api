@@ -23,6 +23,8 @@ const errorHandler = (
     return;
   }
 
+  console.error("Unhandled error:", err);
+
   res.status(500).json({
     error: {
       code: "INTERNAL_ERROR",

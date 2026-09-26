@@ -15,7 +15,7 @@ export async function sendVerificationEmail({
   const verificationUrl = `${env.FRONTEND_URL}/verify-email?token=${encodeURIComponent(token)}`;
 
   const { data, error } = await resend.emails.send({
-    from: "Gwent Forge <onboarding@resend.dev>",
+    from: "Gwent Forge <noreply@gwentforge.com>",
     to: email,
     subject: "Verify your Gwent Forge email address",
     html: `

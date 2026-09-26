@@ -5,6 +5,7 @@ interface RequiredEnv {
   JWT_REFRESH_EXPIRES_IN: string;
   FRONTEND_URL: string;
   EMAIL_VERIFICATION_TOKEN_EXPIRES_IN: string;
+  RESEND_API_KEY: string;
 }
 
 const REQUIRED_KEYS: (keyof RequiredEnv)[] = [
@@ -14,6 +15,7 @@ const REQUIRED_KEYS: (keyof RequiredEnv)[] = [
   "JWT_REFRESH_EXPIRES_IN",
   "FRONTEND_URL",
   "EMAIL_VERIFICATION_TOKEN_EXPIRES_IN",
+  "RESEND_API_KEY",
 ];
 
 function loadRequiredEnv(): RequiredEnv {
@@ -33,6 +35,7 @@ function loadRequiredEnv(): RequiredEnv {
     FRONTEND_URL: process.env.FRONTEND_URL as string,
     EMAIL_VERIFICATION_TOKEN_EXPIRES_IN: process.env
       .EMAIL_VERIFICATION_TOKEN_EXPIRES_IN as string,
+    RESEND_API_KEY: process.env.RESEND_API_KEY as string,
   };
 }
 

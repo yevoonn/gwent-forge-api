@@ -112,6 +112,7 @@ export async function register({
   email,
   username,
   password,
+  lang,
 }: RegisterInput): Promise<PublicUser> {
   // Check for existing users before creating a new account.
   // This allows us to return field-specific conflict errors to the client.
@@ -173,6 +174,7 @@ export async function register({
     await sendVerificationEmail({
       email: user.email,
       token: verificationToken,
+      lang,
     });
 
     // Never return the password hash to the client.
@@ -190,6 +192,7 @@ export async function register({
 
 export async function resendVerification({
   email,
+  lang,
 }: ResendVerificationInput): Promise<void> {
   const user = await prisma.user.findUnique({ where: { email } });
 
@@ -218,7 +221,11 @@ export async function resendVerification({
     return { verificationToken };
   });
 
-  await sendVerificationEmail({ email: user.email, token: verificationToken });
+  await sendVerificationEmail({
+    email: user.email,
+    token: verificationToken,
+    lang,
+  });
 }
 
 export async function login({ email, password }: LoginInput) {

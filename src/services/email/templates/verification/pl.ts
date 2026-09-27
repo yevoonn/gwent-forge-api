@@ -8,11 +8,11 @@ export function getVerificationEmailTemplate({
   year,
 }: VerificationEmailTemplateInput) {
   return {
-    subject: "Verify your Gwent Forge email address",
+    subject: "Zweryfikuj swój adres email w Gwent Forge",
 
     html: `
       <!DOCTYPE html>
-      <html lang="en">
+      <html lang="pl">
         <head>
           <meta charset="UTF-8" />
           <meta
@@ -22,7 +22,7 @@ export function getVerificationEmailTemplate({
           <meta name="color-scheme" content="dark" />
           <meta name="supported-color-schemes" content="dark" />
 
-          <title>Verify your Gwent Forge email address</title>
+          <title>Zweryfikuj swój adres email w Gwent Forge</title>
         </head>
 
         <body
@@ -110,6 +110,7 @@ export function getVerificationEmailTemplate({
                         padding: 20px 32px;
                       "
                     >
+
                       <!-- HEADING -->
                       <h1
                         style="
@@ -122,7 +123,7 @@ export function getVerificationEmailTemplate({
                           color: #fbbf24;
                         "
                       >
-                        Verify your email address
+                        Zweryfikuj swój adres email
                       </h1>
 
                       <!-- MESSAGE -->
@@ -135,9 +136,9 @@ export function getVerificationEmailTemplate({
                           color: #cbd5e1;
                         "
                       >
-                        Thank you for creating your Gwent Forge account.
-                        Please verify your email address to complete your
-                        registration.
+                        Dziękujemy za utworzenie konta w Gwent Forge.
+                        Zweryfikuj swój adres email, aby dokończyć
+                        rejestrację.
                       </p>
 
                       <!-- BUTTON -->
@@ -174,7 +175,7 @@ export function getVerificationEmailTemplate({
                                 text-decoration: none;
                               "
                             >
-                              Verify email address
+                              Zweryfikuj adres email
                             </a>
                           </td>
                         </tr>
@@ -190,8 +191,8 @@ export function getVerificationEmailTemplate({
                           color: #94a3b8;
                         "
                       >
-                        This verification link will expire after a limited
-                        time.
+                        Ten link weryfikacyjny wygaśnie po upływie
+                        określonego czasu.
                       </p>
 
                       <!-- FALLBACK LINK -->
@@ -210,8 +211,8 @@ export function getVerificationEmailTemplate({
                             color: #64748b;
                           "
                         >
-                          If the button above does not work, copy and paste
-                          the following link into your browser:
+                          Jeśli przycisk powyżej nie działa, skopiuj i wklej
+                          poniższy link do swojej przeglądarki:
                         </p>
 
                         <p
@@ -253,8 +254,8 @@ export function getVerificationEmailTemplate({
                           color: #475569;
                         "
                       >
-                        You received this email because an account was
-                        registered with this email address.
+                        Otrzymujesz tę wiadomość, ponieważ na ten adres
+                        email zostało zarejestrowane konto.
                       </p>
 
                       <p

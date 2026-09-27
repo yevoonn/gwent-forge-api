@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+const emailLanguageSchema = z.enum(["en", "pl", "it"]).default("en");
+
 /**
  * Schema used when creating a new account.
  * Besides validation, it also normalizes the email and removes
@@ -20,6 +22,7 @@ export const registerSchema = z.object({
     .string()
     .min(8, "Password must contain at least 8 characters")
     .max(128, "Password must contain at most 128 characters"),
+  lang: emailLanguageSchema,
 });
 
 /**
@@ -32,6 +35,7 @@ export const resendVerificationSchema = z.object({
     .trim()
     .email("Please enter a valid email address")
     .toLowerCase(),
+  lang: emailLanguageSchema,
 });
 
 /**

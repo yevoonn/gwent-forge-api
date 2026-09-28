@@ -28,8 +28,23 @@ export const registerSchema = z.object({
 /**
  * Schema used when requesting a new email verification token.
  * The email is normalized in the same way as during login and registration.
+ * The language determines which localized email template is used.
  */
 export const resendVerificationSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email address")
+    .toLowerCase(),
+  lang: emailLanguageSchema,
+});
+
+/**
+ * Schema used when requesting a password reset email.
+ * The email is normalized before lookup.
+ * The language determines which localized email template is used.
+ */
+export const forgotPasswordSchema = z.object({
   email: z
     .string()
     .trim()
@@ -91,6 +106,7 @@ export const changePasswordSchema = z.object({
 
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type ResendVerificationInput = z.infer<typeof resendVerificationSchema>;
+export type ForgotPasswordInput = z.infer<typeof forgotPasswordSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type VerifyEmailInput = z.infer<typeof verifyEmailSchema>;
 export type UpdateProfileInput = z.infer<typeof updateProfileSchema>;

@@ -1,4 +1,5 @@
 import { prisma } from "../../lib/prisma.js";
+import crypto from "node:crypto";
 import AuthenticationError from "../../errors/AuthenticationError.js";
 import ConflictError, {
   type ConflictErrorDetail,
@@ -8,7 +9,10 @@ import { hashPassword, verifyPassword } from "../../utils/password.js";
 import { mapPrismaError } from "../../utils/mapPrismaError.js";
 import { hashToken } from "../../utils/tokenHash.js";
 import { generateEmailVerificationToken } from "../../utils/emailVerificationToken.js";
-import { sendVerificationEmail } from "../../services/email/index.js";
+import {
+  sendPasswordResetEmail,
+  sendVerificationEmail,
+} from "../../services/email/index.js";
 import {
   generateAccessToken,
   generateRefreshToken,
@@ -20,6 +24,7 @@ import type {
   RegisterInput,
   LoginInput,
   VerifyEmailInput,
+  ForgotPasswordInput,
   ResendVerificationInput,
   UpdateProfileInput,
   ChangePasswordInput,
@@ -226,6 +231,38 @@ export async function resendVerification({
     token: verificationToken,
     lang,
   });
+}
+
+export async function forgotPassword({
+  email,
+  lang,
+}: ForgotPasswordInput): Promise<void> {
+  const user = await prisma.user.findUnique({ where: { email } });
+
+  // Do not reveal whether the email address is registered.
+  if (!user) return;
+
+  const { token } = await prisma.$transaction(async (tx) => {
+    // Invalidate existing unused password reset tokens.
+    await tx.passwordResetToken.updateMany({
+      where: { userId: user.id, usedAt: null },
+      data: { usedAt: new Date() },
+    });
+
+    const token = crypto.randomBytes(32).toString("hex");
+    const tokenHash = hashToken(token);
+    const expiresAt = new Date(
+      Date.now() + parseJWTDuration(env.PASSWORD_RESET_TOKEN_EXPIRES_IN),
+    );
+
+    await tx.passwordResetToken.create({
+      data: { userId: user.id, tokenHash, expiresAt },
+    });
+
+    return { token };
+  });
+
+  await sendPasswordResetEmail({ email: user.email, token, lang });
 }
 
 export async function login({ email, password }: LoginInput) {

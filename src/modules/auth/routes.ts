@@ -10,6 +10,7 @@ import {
   changePasswordSchema,
   verifyEmailSchema,
   resendVerificationSchema,
+  forgotPasswordSchema,
 } from "./validationSchemas.js";
 
 const router = Router();
@@ -22,7 +23,13 @@ router.post("/register", validate(registerSchema), authController.register);
 router.post(
   "/resend-verification-email",
   validate(resendVerificationSchema),
-  authController.resendVerification as RequestHandler,
+  authController.resendVerification,
+);
+
+router.post(
+  "/forgot-password",
+  validate(forgotPasswordSchema),
+  authController.forgotPassword,
 );
 
 router.post("/login", validate(loginSchema), authController.login);
@@ -30,7 +37,7 @@ router.post("/login", validate(loginSchema), authController.login);
 router.post(
   "/verify-email",
   validate(verifyEmailSchema),
-  authController.verifyEmail as RequestHandler,
+  authController.verifyEmail,
 );
 
 router.post("/logout", authController.logout);

@@ -25,6 +25,7 @@ import type {
   LoginInput,
   VerifyEmailInput,
   ForgotPasswordInput,
+  ResetPasswordInput,
   ResendVerificationInput,
   UpdateProfileInput,
   ChangePasswordInput,
@@ -263,6 +264,58 @@ export async function forgotPassword({
   });
 
   await sendPasswordResetEmail({ email: user.email, token, lang });
+}
+
+export async function resetPassword({
+  token,
+  newPassword,
+}: ResetPasswordInput): Promise<void> {
+  // Hash the raw token to match the value stored in the database.
+  const tokenHash = hashToken(token);
+
+  const resetToken = await prisma.passwordResetToken.findUnique({
+    where: { tokenHash },
+  });
+
+  if (!resetToken) {
+    throw new AuthenticationError(
+      "INVALID_PASSWORD_RESET_TOKEN",
+      "Invalid password reset token.",
+    );
+  }
+
+  // Prevent reuse of an already consumed token.
+  if (resetToken.usedAt) {
+    throw new AuthenticationError(
+      "PASSWORD_RESET_TOKEN_USED",
+      "Password reset token has already been used.",
+    );
+  }
+
+  // Reject tokens that are no longer valid.
+  if (resetToken.expiresAt <= new Date()) {
+    throw new AuthenticationError(
+      "PASSWORD_RESET_TOKEN_EXPIRED",
+      "Password reset token has expired.",
+    );
+  }
+
+  const passwordHash = await hashPassword(newPassword);
+
+  await prisma.$transaction([
+    prisma.user.update({
+      where: { id: resetToken.userId },
+      data: { passwordHash },
+    }),
+    prisma.passwordResetToken.update({
+      where: { id: resetToken.id },
+      data: { usedAt: new Date() },
+    }),
+    prisma.userSession.updateMany({
+      where: { userId: resetToken.userId, revokedAt: null },
+      data: { revokedAt: new Date() },
+    }),
+  ]);
 }
 
 export async function login({ email, password }: LoginInput) {

@@ -84,6 +84,17 @@ export async function forgotPassword(
   });
 }
 
+export async function resetPassword(
+  req: Request,
+  res: Response,
+): Promise<void> {
+  await authService.resetPassword(req.body);
+
+  res.status(200).json({
+    message: "Password has been reset successfully.",
+  });
+}
+
 export async function login(req: Request, res: Response): Promise<void> {
   const result = await authService.login(req.body);
 

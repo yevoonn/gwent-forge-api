@@ -54,6 +54,18 @@ export const forgotPasswordSchema = z.object({
 });
 
 /**
+ * Schema used when setting a new password through a password reset token.
+ * The token is trimmed before it is passed to the reset password service.
+ */
+export const resetPasswordSchema = z.object({
+  token: z.string().trim().min(1),
+  newPassword: z
+    .string()
+    .min(8, "Password must contain at least 8 characters")
+    .max(128, "Password must contain at most 128 characters"),
+});
+
+/**
  * Login accepts only the credentials required for authentication.
  * The same email normalization rules are used as during registration
  * so that email lookup is consistent.
@@ -107,6 +119,7 @@ export const changePasswordSchema = z.object({
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type ResendVerificationInput = z.infer<typeof resendVerificationSchema>;
 export type ForgotPasswordInput = z.infer<typeof forgotPasswordSchema>;
+export type ResetPasswordInput = z.infer<typeof resetPasswordSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
 export type VerifyEmailInput = z.infer<typeof verifyEmailSchema>;
 export type UpdateProfileInput = z.infer<typeof updateProfileSchema>;

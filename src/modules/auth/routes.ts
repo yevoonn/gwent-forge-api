@@ -11,6 +11,7 @@ import {
   verifyEmailSchema,
   resendVerificationSchema,
   forgotPasswordSchema,
+  resetPasswordSchema,
 } from "./validationSchemas.js";
 
 const router = Router();
@@ -30,6 +31,12 @@ router.post(
   "/forgot-password",
   validate(forgotPasswordSchema),
   authController.forgotPassword,
+);
+
+router.post(
+  "/reset-password",
+  validate(resetPasswordSchema),
+  authController.resetPassword,
 );
 
 router.post("/login", validate(loginSchema), authController.login);

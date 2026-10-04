@@ -7,6 +7,9 @@ interface RequiredEnv {
   EMAIL_VERIFICATION_TOKEN_EXPIRES_IN: string;
   PASSWORD_RESET_TOKEN_EXPIRES_IN: string;
   RESEND_API_KEY: string;
+  GOOGLE_CLIENT_ID: string;
+  GOOGLE_CLIENT_SECRET: string;
+  GOOGLE_CALLBACK_URL: string;
 }
 
 const REQUIRED_KEYS: (keyof RequiredEnv)[] = [
@@ -18,6 +21,9 @@ const REQUIRED_KEYS: (keyof RequiredEnv)[] = [
   "EMAIL_VERIFICATION_TOKEN_EXPIRES_IN",
   "PASSWORD_RESET_TOKEN_EXPIRES_IN",
   "RESEND_API_KEY",
+  "GOOGLE_CLIENT_ID",
+  "GOOGLE_CLIENT_SECRET",
+  "GOOGLE_CALLBACK_URL",
 ];
 
 function loadRequiredEnv(): RequiredEnv {
@@ -40,6 +46,9 @@ function loadRequiredEnv(): RequiredEnv {
     PASSWORD_RESET_TOKEN_EXPIRES_IN: process.env
       .PASSWORD_RESET_TOKEN_EXPIRES_IN as string,
     RESEND_API_KEY: process.env.RESEND_API_KEY as string,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID as string,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET as string,
+    GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL as string,
   };
 }
 

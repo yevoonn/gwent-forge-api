@@ -327,6 +327,11 @@ export async function login({ email, password }: LoginInput) {
     throw new AuthenticationError();
   }
 
+  // OAuth users do not have a password and cannot use password login.
+  if (!user.passwordHash) {
+    throw new AuthenticationError();
+  }
+
   const isPasswordValid = await verifyPassword(password, user.passwordHash);
 
   if (!isPasswordValid) {
@@ -517,6 +522,14 @@ export async function changePassword(
 
   if (!user) {
     throw new AuthenticationError("USER_NOT_FOUND", "User not found");
+  }
+
+  // OAuth users do not have a current password to verify.
+  if (!user.passwordHash) {
+    throw new AuthenticationError(
+      "INVALID_CURRENT_PASSWORD",
+      "Current password is incorrect",
+    );
   }
 
   const isCurrentPasswordValid = await verifyPassword(

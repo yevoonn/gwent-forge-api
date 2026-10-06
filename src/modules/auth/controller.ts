@@ -3,9 +3,12 @@ import type { AuthenticatedRequest } from "../../types/express.js";
 import * as authService from "./service.js";
 import AuthenticationError from "../../errors/AuthenticationError.js";
 import { parseJWTDuration } from "../../utils/jwt.js";
+import { generateGoogleAuthUrl } from "../../utils/googleOAuth.js";
+import { generateGoogleOAuthState } from "../../utils/googleOAuthState.js";
 import { env } from "../../config/env.js";
 
 const REFRESH_TOKEN_COOKIE = "refresh_token";
+const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 
 function getRefreshTokenCookieOptions() {
   return {
@@ -14,6 +17,14 @@ function getRefreshTokenCookieOptions() {
     sameSite: (env.NODE_ENV === "production" ? "none" : "lax") as
       | "none"
       | "lax",
+  };
+}
+
+function getGoogleOAuthStateCookieOptions() {
+  return {
+    httpOnly: true,
+    secure: env.NODE_ENV === "production",
+    sameSite: "lax" as const,
   };
 }
 
@@ -160,4 +171,17 @@ export async function refresh(req: Request, res: Response): Promise<void> {
     user: result.user,
     accessToken: result.accessToken,
   });
+}
+
+export function googleAuth(req: Request, res: Response): void {
+  const state = generateGoogleOAuthState();
+
+  res.cookie(GOOGLE_OAUTH_STATE_COOKIE, state, {
+    ...getGoogleOAuthStateCookieOptions(),
+    maxAge: parseJWTDuration(env.GOOGLE_OAUTH_STATE_MAX_AGE),
+  });
+
+  const authUrl = generateGoogleAuthUrl(state);
+
+  res.redirect(authUrl);
 }

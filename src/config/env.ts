@@ -10,6 +10,7 @@ interface RequiredEnv {
   GOOGLE_CLIENT_ID: string;
   GOOGLE_CLIENT_SECRET: string;
   GOOGLE_CALLBACK_URL: string;
+  GOOGLE_OAUTH_STATE_MAX_AGE: string;
 }
 
 const REQUIRED_KEYS: (keyof RequiredEnv)[] = [
@@ -24,6 +25,7 @@ const REQUIRED_KEYS: (keyof RequiredEnv)[] = [
   "GOOGLE_CLIENT_ID",
   "GOOGLE_CLIENT_SECRET",
   "GOOGLE_CALLBACK_URL",
+  "GOOGLE_OAUTH_STATE_MAX_AGE",
 ];
 
 function loadRequiredEnv(): RequiredEnv {
@@ -49,6 +51,8 @@ function loadRequiredEnv(): RequiredEnv {
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID as string,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET as string,
     GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL as string,
+    GOOGLE_OAUTH_STATE_MAX_AGE: process.env
+      .GOOGLE_OAUTH_STATE_MAX_AGE as string,
   };
 }
 

@@ -31,6 +31,7 @@ import type {
   ChangePasswordInput,
 } from "./validationSchemas.js";
 import type { User } from "@prisma/client";
+import type { GoogleUser } from "../../utils/googleOAuth.js";
 
 interface PublicUser {
   id: number;
@@ -318,28 +319,7 @@ export async function resetPassword({
   ]);
 }
 
-export async function login({ email, password }: LoginInput) {
-  const user = await prisma.user.findUnique({ where: { email } });
-
-  // Use the same authentication error for a missing user and an invalid
-  // password so that the API does not reveal which email addresses exist.
-  if (!user) {
-    throw new AuthenticationError();
-  }
-
-  const isPasswordValid = await verifyPassword(password, user.passwordHash);
-
-  if (!isPasswordValid) {
-    throw new AuthenticationError();
-  }
-
-  if (!user.isEmailVerified) {
-    throw new AuthenticationError(
-      "EMAIL_NOT_VERIFIED",
-      "Email address has not been verified.",
-    );
-  }
-
+async function createUserSession(user: User) {
   // The access token is short-lived and used to authorize API requests.
   // The refresh token is long-lived and used only to obtain a new access token.
   const accessToken = generateAccessToken(user);
@@ -362,6 +342,93 @@ export async function login({ email, password }: LoginInput) {
     accessToken,
     refreshToken,
   };
+}
+
+export async function login({ email, password }: LoginInput) {
+  const user = await prisma.user.findUnique({ where: { email } });
+
+  // Use the same authentication error for a missing user and an invalid
+  // password so that the API does not reveal which email addresses exist.
+  if (!user) {
+    throw new AuthenticationError();
+  }
+
+  // OAuth users do not have a password and cannot use password login.
+  if (!user.passwordHash) {
+    throw new AuthenticationError();
+  }
+
+  const isPasswordValid = await verifyPassword(password, user.passwordHash);
+
+  if (!isPasswordValid) {
+    throw new AuthenticationError();
+  }
+
+  if (!user.isEmailVerified) {
+    throw new AuthenticationError(
+      "EMAIL_NOT_VERIFIED",
+      "Email address has not been verified.",
+    );
+  }
+
+  return createUserSession(user);
+}
+
+export async function loginWithGoogle(googleUser: GoogleUser) {
+  // Reuse the existing account when the Google account is already linked.
+  const existingOAuthAccount = await prisma.userOAuthAccount.findUnique({
+    where: {
+      provider_providerAccountId: {
+        provider: "GOOGLE",
+        providerAccountId: googleUser.providerAccountId,
+      },
+    },
+    include: { user: true },
+  });
+
+  if (existingOAuthAccount) {
+    return createUserSession(existingOAuthAccount.user);
+  }
+
+  // Do not automatically link Google to an existing local account.
+  const existingUser = await prisma.user.findUnique({
+    where: { email: googleUser.email },
+  });
+
+  if (existingUser) {
+    throw new AuthenticationError(
+      "GOOGLE_ACCOUNT_NOT_LINKED",
+      "This Google account is not linked to an existing Gwent Forge account.",
+    );
+  }
+
+  try {
+    // Create a new OAuth-only user and link the Google account.
+    const user = await prisma.user.create({
+      data: {
+        email: googleUser.email,
+        username: googleUser.email,
+        passwordHash: null,
+        isEmailVerified: googleUser.emailVerified,
+        oauthAccounts: {
+          create: {
+            provider: "GOOGLE",
+            providerAccountId: googleUser.providerAccountId,
+          },
+        },
+      },
+    });
+
+    return createUserSession(user);
+  } catch (error) {
+    const mappedError = mapPrismaError(error);
+
+    if (mappedError) {
+      throw mappedError;
+    }
+
+    throw error;
+  }
 }
 
 export async function verifyEmail({
@@ -517,6 +584,14 @@ export async function changePassword(
 
   if (!user) {
     throw new AuthenticationError("USER_NOT_FOUND", "User not found");
+  }
+
+  // OAuth users do not have a current password to verify.
+  if (!user.passwordHash) {
+    throw new AuthenticationError(
+      "INVALID_CURRENT_PASSWORD",
+      "Current password is incorrect",
+    );
   }
 
   const isCurrentPasswordValid = await verifyPassword(

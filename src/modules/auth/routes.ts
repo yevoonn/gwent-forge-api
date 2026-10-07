@@ -41,6 +41,10 @@ router.post(
 
 router.post("/login", validate(loginSchema), authController.login);
 
+router.get("/google", authController.googleAuth);
+
+router.get("/google/callback", authController.googleCallback);
+
 router.post(
   "/verify-email",
   validate(verifyEmailSchema),

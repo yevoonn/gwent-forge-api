@@ -17,7 +17,7 @@ export const registerSchema = z.object({
     .string()
     .trim()
     .min(3, "Username must contain at least 3 characters")
-    .max(12, "Username must contain at most 12 characters"),
+    .max(255, "Username must contain at most 255 characters"),
   password: z
     .string()
     .min(8, "Password must contain at least 8 characters")
@@ -99,7 +99,7 @@ export const updateProfileSchema = z.object({
     .string()
     .trim()
     .min(3, "Username must contain at least 3 characters")
-    .max(12, "Username must contain at most 12 characters"),
+    .max(255, "Username must contain at most 255 characters"),
 });
 
 /**

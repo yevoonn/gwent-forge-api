@@ -12,6 +12,10 @@ enum UserRole {
   ADMIN
 }
 
+enum OAuthProvider {
+  GOOGLE
+}
+
 model Card {
   id                        Int                       @id @default(autoincrement())
   deck_id                   Int
@@ -231,8 +235,8 @@ model Language {
 model User {
   id              Int      @id @default(autoincrement())
   email           String   @unique @db.VarChar(255)
-  username        String   @unique @db.VarChar(50)
-  passwordHash    String   @map("password_hash") @db.VarChar(255)
+  username        String   @unique @db.VarChar(255)
+  passwordHash    String?  @map("password_hash") @db.VarChar(255)
   role            UserRole @default(USER)
   isEmailVerified Boolean  @default(false) @map("is_email_verified")
   createdAt       DateTime @default(now()) @map("created_at")
@@ -241,6 +245,7 @@ model User {
   sessions                UserSession[]
   emailVerificationTokens EmailVerificationToken[]
   passwordResetTokens     PasswordResetToken[]
+  oauthAccounts           UserOAuthAccount[]
   user_deck               UserDeck[]
 
   @@map("user")
@@ -259,6 +264,21 @@ model UserSession {
 
   @@index([userId])
   @@map("user_session")
+}
+
+model UserOAuthAccount {
+  id                Int           @id @default(autoincrement())
+  userId            Int           @map("user_id")
+  provider          OAuthProvider
+  providerAccountId String        @map("provider_account_id") @db.VarChar(255)
+  createdAt         DateTime      @default(now()) @map("created_at")
+  updatedAt         DateTime      @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId], map: "uq_user_oauth_account_provider_account")
+  @@index([userId], map: "idx_user_oauth_account_user_id")
+  @@map("user_oauth_account")
 }
 
 model UserDeck {

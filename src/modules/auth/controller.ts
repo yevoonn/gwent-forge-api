@@ -3,7 +3,10 @@ import type { AuthenticatedRequest } from "../../types/express.js";
 import * as authService from "./service.js";
 import AuthenticationError from "../../errors/AuthenticationError.js";
 import { parseJWTDuration } from "../../utils/jwt.js";
-import { generateGoogleAuthUrl } from "../../utils/googleOAuth.js";
+import {
+  generateGoogleAuthUrl,
+  getGoogleUser,
+} from "../../utils/googleOAuth.js";
 import { generateGoogleOAuthState } from "../../utils/googleOAuthState.js";
 import { env } from "../../config/env.js";
 
@@ -184,4 +187,42 @@ export function googleAuth(req: Request, res: Response): void {
   const authUrl = generateGoogleAuthUrl(state);
 
   res.redirect(authUrl);
+}
+
+export async function googleCallback(
+  req: Request,
+  res: Response,
+): Promise<void> {
+  const state = typeof req.query.state === "string" ? req.query.state : null;
+  const code = typeof req.query.code === "string" ? req.query.code : null;
+  const storedState = req.cookies[GOOGLE_OAUTH_STATE_COOKIE];
+
+  res.clearCookie(
+    GOOGLE_OAUTH_STATE_COOKIE,
+    getGoogleOAuthStateCookieOptions(),
+  );
+
+  if (!state || !storedState || state !== storedState) {
+    throw new AuthenticationError(
+      "INVALID_GOOGLE_OAUTH_STATE",
+      "Invalid Google OAuth state",
+    );
+  }
+
+  if (!code) {
+    throw new AuthenticationError(
+      "MISSING_GOOGLE_OAUTH_CODE",
+      "Google authorization code is missing",
+    );
+  }
+
+  const googleUser = await getGoogleUser(code);
+  const result = await authService.loginWithGoogle(googleUser);
+
+  res.cookie(REFRESH_TOKEN_COOKIE, result.refreshToken, {
+    ...getRefreshTokenCookieOptions(),
+    maxAge: parseJWTDuration(env.JWT_REFRESH_EXPIRES_IN),
+  });
+
+  res.redirect(env.FRONTEND_URL);
 }

@@ -39,6 +39,7 @@ interface PublicUser {
   username: string;
   role: string;
   isEmailVerified: boolean;
+  hasPassword: boolean;
 }
 
 function getPublicUser(user: User): PublicUser {
@@ -48,6 +49,7 @@ function getPublicUser(user: User): PublicUser {
     username: user.username,
     role: user.role,
     isEmailVerified: user.isEmailVerified,
+    hasPassword: Boolean(user.passwordHash),
   };
 }
 
@@ -586,24 +588,27 @@ export async function changePassword(
     throw new AuthenticationError("USER_NOT_FOUND", "User not found");
   }
 
-  // OAuth users do not have a current password to verify.
-  if (!user.passwordHash) {
-    throw new AuthenticationError(
-      "INVALID_CURRENT_PASSWORD",
-      "Current password is incorrect",
-    );
-  }
+  // Existing password users must verify their current password.
+  // OAuth-only users can set their first password without one.
+  if (user.passwordHash) {
+    if (!currentPassword) {
+      throw new AuthenticationError(
+        "INVALID_CURRENT_PASSWORD",
+        "Current password is incorrect",
+      );
+    }
 
-  const isCurrentPasswordValid = await verifyPassword(
-    currentPassword,
-    user.passwordHash,
-  );
-
-  if (!isCurrentPasswordValid) {
-    throw new AuthenticationError(
-      "INVALID_CURRENT_PASSWORD",
-      "Current password is incorrect",
+    const isCurrentPasswordValid = await verifyPassword(
+      currentPassword,
+      user.passwordHash,
     );
+
+    if (!isCurrentPasswordValid) {
+      throw new AuthenticationError(
+        "INVALID_CURRENT_PASSWORD",
+        "Current password is incorrect",
+      );
+    }
   }
 
   const passwordHash = await hashPassword(newPassword);

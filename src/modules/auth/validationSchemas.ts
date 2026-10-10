@@ -103,13 +103,11 @@ export const updateProfileSchema = z.object({
 });
 
 /**
- * Schema used when changing the authenticated user's password.
- * The current password is required to verify the user's identity,
- * while the new password must satisfy the same password rules
- * as during registration.
+ * Schema used when setting or changing the authenticated user's password.
+ * The current password is optional because OAuth-only users do not have one.
  */
 export const changePasswordSchema = z.object({
-  currentPassword: z.string().min(1, "Current password is required"),
+  currentPassword: z.string().min(1, "Current password is required").optional(),
   newPassword: z
     .string()
     .min(8, "Password must contain at least 8 characters")

@@ -217,7 +217,27 @@ export async function googleCallback(
   }
 
   const googleUser = await getGoogleUser(code);
-  const result = await authService.loginWithGoogle(googleUser);
+
+  let result: Awaited<ReturnType<typeof authService.loginWithGoogle>>;
+
+  try {
+    result = await authService.loginWithGoogle(googleUser);
+  } catch (error) {
+    if (
+      error instanceof AuthenticationError &&
+      error.code === "GOOGLE_ACCOUNT_NOT_LINKED"
+    ) {
+      const redirectUrl = new URL(env.FRONTEND_URL);
+
+      redirectUrl.searchParams.set("googleAuthError", "account_not_linked");
+
+      res.redirect(redirectUrl.toString());
+
+      return;
+    }
+
+    throw error;
+  }
 
   res.cookie(REFRESH_TOKEN_COOKIE, result.refreshToken, {
     ...getRefreshTokenCookieOptions(),

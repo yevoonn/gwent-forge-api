@@ -244,5 +244,9 @@ export async function googleCallback(
     maxAge: parseJWTDuration(env.JWT_REFRESH_EXPIRES_IN),
   });
 
-  res.redirect(env.FRONTEND_URL);
+  const redirectUrl = new URL(env.FRONTEND_URL);
+
+  redirectUrl.searchParams.set("googleAuthSuccess", "1");
+
+  res.redirect(redirectUrl.toString());
 }

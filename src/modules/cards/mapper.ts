@@ -43,6 +43,7 @@ const cardWithRelations = Prisma.validator<Prisma.CardDefaultArgs>()({
 
     deck: {
       select: {
+        id: true,
         code: true,
         deck_translation: {
           select: { name: true },
@@ -75,6 +76,7 @@ export interface MappedCard {
   };
   abilities: MappedCardAbility[];
   deck: {
+    id: number;
     code: string;
     name: string | null;
   };
@@ -102,6 +104,7 @@ export function mapCards(cards: CardWithRelations[]): MappedCard[] {
         null,
     })),
     deck: {
+      id: card.deck.id,
       code: card.deck.code,
       name: card.deck.deck_translation[0]?.name ?? null,
     },

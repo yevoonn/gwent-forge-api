@@ -70,6 +70,7 @@ export async function findCards({
 
       deck: {
         select: {
+          id: true,
           code: true,
           deck_translation: {
             where: { language: { code: lang } },

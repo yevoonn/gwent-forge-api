@@ -6,7 +6,7 @@ import { Prisma } from "@prisma/client";
 const userDeckListItem = Prisma.validator<Prisma.UserDeckDefaultArgs>()({
   select: {
     id: true,
-    deckId: true,
+    deck: { select: { id: true, code: true } },
     createdAt: true,
     updatedAt: true,
     user_deck_translation: {
@@ -19,7 +19,10 @@ type UserDeckListItem = Prisma.UserDeckGetPayload<typeof userDeckListItem>;
 
 export interface MappedUserDeckListItem {
   id: number;
-  deckId: number;
+  deck: {
+    id: number;
+    code: string;
+  };
   name: string | null;
   description: string | null;
   createdAt: Date;
@@ -31,7 +34,7 @@ export function mapUserDeckListItems(
 ): MappedUserDeckListItem[] {
   return userDecks.map((userDeck) => ({
     id: userDeck.id,
-    deckId: userDeck.deckId,
+    deck: { id: userDeck.deck.id, code: userDeck.deck.code },
     name: userDeck.user_deck_translation[0]?.name ?? null,
     description: userDeck.user_deck_translation[0]?.description ?? null,
     createdAt: userDeck.createdAt,
@@ -45,7 +48,7 @@ export function mapUserDeckListItems(
 const userDeckWithCardCodes = Prisma.validator<Prisma.UserDeckDefaultArgs>()({
   select: {
     id: true,
-    deckId: true,
+    deck: { select: { id: true, code: true } },
     createdAt: true,
     updatedAt: true,
     user_deck_translation: {
@@ -67,7 +70,10 @@ type UserDeckWithCardCodes = Prisma.UserDeckGetPayload<
 
 export interface MappedUserDeckDetail {
   id: number;
-  deckId: number;
+  deck: {
+    id: number;
+    code: string;
+  };
   name: string | null;
   description: string | null;
   cardCodes: string[];
@@ -80,7 +86,7 @@ export function mapUserDeckDetail(
 ): MappedUserDeckDetail {
   return {
     id: userDeck.id,
-    deckId: userDeck.deckId,
+    deck: { id: userDeck.deck.id, code: userDeck.deck.code },
     name: userDeck.user_deck_translation[0]?.name ?? null,
     description: userDeck.user_deck_translation[0]?.description ?? null,
     cardCodes: userDeck.user_deck_card.map(({ card }) => card.code),

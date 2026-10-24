@@ -140,7 +140,7 @@ export async function createUserDeck(
     },
     select: {
       id: true,
-      deckId: true,
+      deck: { select: { id: true, code: true } },
       createdAt: true,
       updatedAt: true,
       user_deck_translation: {
@@ -164,7 +164,7 @@ export async function findUserDecks(
     orderBy: { createdAt: "desc" },
     select: {
       id: true,
-      deckId: true,
+      deck: { select: { id: true, code: true } },
       createdAt: true,
       updatedAt: true,
       user_deck_translation: {
@@ -195,7 +195,7 @@ export async function findUserDeckById(
     where: { id: userDeckId },
     select: {
       id: true,
-      deckId: true,
+      deck: { select: { id: true, code: true } },
       createdAt: true,
       updatedAt: true,
       user_deck_translation: {

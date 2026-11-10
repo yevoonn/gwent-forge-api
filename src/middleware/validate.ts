@@ -1,5 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import type { ZodType } from "zod";
+
 import ValidationError, {
   type ValidationErrorDetail,
 } from "../errors/ValidationError.js";

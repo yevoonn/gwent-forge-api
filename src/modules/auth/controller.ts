@@ -1,4 +1,5 @@
 import type { Request, Response } from "express";
+
 import type { AuthenticatedRequest } from "../../types/express.js";
 import * as authService from "./service.js";
 import AuthenticationError from "../../errors/AuthenticationError.js";

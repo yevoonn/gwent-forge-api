@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+
 import { env } from "../../config/env.js";
 import { getVerificationEmailTemplate } from "./templates/verification/index.js";
 

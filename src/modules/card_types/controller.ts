@@ -1,4 +1,5 @@
 import type { Request, Response } from "express";
+
 import { findCardTypes } from "./service.js";
 import { parseQueryArray } from "../../utils/query.js";
 import type { CardTypeFilters } from "./query.js";

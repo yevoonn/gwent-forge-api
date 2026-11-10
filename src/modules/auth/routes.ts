@@ -1,4 +1,5 @@
 import { Router, type RequestHandler } from "express";
+
 import * as authController from "./controller.js";
 import validate from "../../middleware/validate.js";
 import authenticate from "../../middleware/authenticate.js";

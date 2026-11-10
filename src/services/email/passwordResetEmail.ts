@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+
 import { env } from "../../config/env.js";
 import { getPasswordResetEmailTemplate } from "./templates/passwordReset/index.js";
 

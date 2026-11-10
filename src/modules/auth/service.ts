@@ -1,5 +1,7 @@
-import { prisma } from "../../lib/prisma.js";
 import crypto from "node:crypto";
+import type { User } from "@prisma/client";
+
+import { prisma } from "../../lib/prisma.js";
 import AuthenticationError from "../../errors/AuthenticationError.js";
 import ConflictError, {
   type ConflictErrorDetail,
@@ -30,7 +32,6 @@ import type {
   UpdateProfileInput,
   ChangePasswordInput,
 } from "./validationSchemas.js";
-import type { User } from "@prisma/client";
 import type { GoogleUser } from "../../utils/googleOAuth.js";
 
 interface PublicUser {

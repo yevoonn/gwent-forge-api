@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import authRoutes from "../modules/auth/routes.js";
 import cardsRoutes from "../modules/cards/routes.js";
 import decksRoutes from "../modules/decks/routes.js";

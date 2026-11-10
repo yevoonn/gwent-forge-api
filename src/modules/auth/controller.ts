@@ -196,6 +196,8 @@ export async function googleCallback(
 ): Promise<void> {
   const state = typeof req.query.state === "string" ? req.query.state : null;
   const code = typeof req.query.code === "string" ? req.query.code : null;
+  const googleError =
+    typeof req.query.error === "string" ? req.query.error : null;
   const storedState = req.cookies[GOOGLE_OAUTH_STATE_COOKIE];
 
   res.clearCookie(
@@ -208,6 +210,16 @@ export async function googleCallback(
       "INVALID_GOOGLE_OAUTH_STATE",
       "Invalid Google OAuth state",
     );
+  }
+
+  if (googleError === "access_denied") {
+    const redirectUrl = new URL(env.FRONTEND_URL);
+
+    redirectUrl.searchParams.set("googleAuthError", "cancelled");
+
+    res.redirect(redirectUrl.toString());
+
+    return;
   }
 
   if (!code) {
